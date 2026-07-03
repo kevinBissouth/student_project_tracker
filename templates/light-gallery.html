@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,14 +9,14 @@
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
   <title>Otika - Admin Dashboard Template</title>
   <!-- General CSS Files -->
-  <link rel="stylesheet" href="assets/css/app.min.css">
-  <link href="assets/bundles/lightgallery/dist/css/lightgallery.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'assets/css/app.min.css' %}">
+  <link href="{% static 'assets/bundles/lightgallery/dist/css/lightgallery.css' %}" rel="stylesheet">
   <!-- Template CSS -->
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/components.css' %}">
   <!-- Custom style CSS -->
-  <link rel="stylesheet" href="assets/css/custom.css">
-  <link rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico' />
+  <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
+  <link rel='shortcut icon' type='image/x-icon' href='{% static 'assets/img/favicon.ico' %}' />
 </head>
 
 <body>
@@ -57,27 +58,27 @@
               </div>
               <div class="dropdown-list-content dropdown-list-message">
                 <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar
-											text-white"> <img alt="image" src="assets/img/users/user-1.png" class="rounded-circle">
+											text-white"> <img alt="image" src="{% static 'assets/img/users/user-1.png' %}" class="rounded-circle">
                   </span> <span class="dropdown-item-desc"> <span class="message-user">John
                       Deo</span>
                     <span class="time messege-text">Please check your mail !!</span>
                     <span class="time">2 Min Ago</span>
                   </span>
                 </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
-                    <img alt="image" src="assets/img/users/user-2.png" class="rounded-circle">
+                    <img alt="image" src="{% static 'assets/img/users/user-2.png' %}" class="rounded-circle">
                   </span> <span class="dropdown-item-desc"> <span class="message-user">Sarah
                       Smith</span> <span class="time messege-text">Request for leave
                       application</span>
                     <span class="time">5 Min Ago</span>
                   </span>
                 </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
-                    <img alt="image" src="assets/img/users/user-5.png" class="rounded-circle">
+                    <img alt="image" src="{% static 'assets/img/users/user-5.png' %}" class="rounded-circle">
                   </span> <span class="dropdown-item-desc"> <span class="message-user">Jacob
                       Ryan</span> <span class="time messege-text">Your payment invoice is
                       generated.</span> <span class="time">12 Min Ago</span>
                   </span>
                 </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
-                    <img alt="image" src="assets/img/users/user-4.png" class="rounded-circle">
+                    <img alt="image" src="{% static 'assets/img/users/user-4.png' %}" class="rounded-circle">
                   </span> <span class="dropdown-item-desc"> <span class="message-user">Lina
                       Smith</span> <span class="time messege-text">hii John, I have upload
                       doc
@@ -85,7 +86,7 @@
                       Min Ago</span>
                   </span>
                 </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
-                    <img alt="image" src="assets/img/users/user-3.png" class="rounded-circle">
+                    <img alt="image" src="{% static 'assets/img/users/user-3.png' %}" class="rounded-circle">
                   </span> <span class="dropdown-item-desc"> <span class="message-user">Jalpa
                       Joshi</span> <span class="time messege-text">Please do as specify.
                       Let me
@@ -93,7 +94,7 @@
                       Days Ago</span>
                   </span>
                 </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
-                    <img alt="image" src="assets/img/users/user-2.png" class="rounded-circle">
+                    <img alt="image" src="{% static 'assets/img/users/user-2.png' %}" class="rounded-circle">
                   </span> <span class="dropdown-item-desc"> <span class="message-user">Sarah
                       Smith</span> <span class="time messege-text">Client Requirements</span>
                     <span class="time">2 Days Ago</span>
@@ -155,19 +156,19 @@
             </div>
           </li>
           <li class="dropdown"><a href="#" data-toggle="dropdown"
-              class="nav-link dropdown-toggle nav-link-lg nav-link-user"> <img alt="image" src="assets/img/user.png"
+              class="nav-link dropdown-toggle nav-link-lg nav-link-user"> <img alt="image" src="{% static 'assets/img/user.png' %}"
                 class="user-img-radious-style"> <span class="d-sm-none d-lg-inline-block"></span></a>
             <div class="dropdown-menu dropdown-menu-right pullDown">
               <div class="dropdown-title">Hello Sarah Smith</div>
-              <a href="profile.html" class="dropdown-item has-icon"> <i class="far
+              <a href="{% url 'profile' %}" class="dropdown-item has-icon"> <i class="far
 										fa-user"></i> Profile
-              </a> <a href="timeline.html" class="dropdown-item has-icon"> <i class="fas fa-bolt"></i>
+              </a> <a href="{% url 'timeline' %}" class="dropdown-item has-icon"> <i class="fas fa-bolt"></i>
                 Activities
               </a> <a href="#" class="dropdown-item has-icon"> <i class="fas fa-cog"></i>
                 Settings
               </a>
               <div class="dropdown-divider"></div>
-              <a href="auth-login.html" class="dropdown-item has-icon text-danger"> <i class="fas fa-sign-out-alt"></i>
+              <a href="{% url 'auth_login' %}" class="dropdown-item has-icon text-danger"> <i class="fas fa-sign-out-alt"></i>
                 Logout
               </a>
             </div>
@@ -177,38 +178,38 @@
       <div class="main-sidebar sidebar-style-2">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="index.html"> <img alt="image" src="assets/img/logo.png" class="header-logo" /> <span
+            <a href="{% url 'dashboard_html' %}"> <img alt="image" src="{% static 'assets/img/logo.png' %}" class="header-logo" /> <span
                 class="logo-name">Otika</span>
             </a>
           </div>
           <ul class="sidebar-menu">
             <li class="menu-header">Main</li>
             <li class="dropdown">
-              <a href="index.html" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
+              <a href="{% url 'dashboard_html' %}" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
             </li>
             <li class="dropdown">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i
                   data-feather="briefcase"></i><span>Widgets</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="widget-chart.html">Chart Widgets</a></li>
-                <li><a class="nav-link" href="widget-data.html">Data Widgets</a></li>
+                <li><a class="nav-link" href="{% url 'widget_chart' %}">Chart Widgets</a></li>
+                <li><a class="nav-link" href="{% url 'widget_data' %}">Data Widgets</a></li>
               </ul>
             </li>
             <li class="dropdown">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="command"></i><span>Apps</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="chat.html">Chat</a></li>
-                <li><a class="nav-link" href="portfolio.html">Portfolio</a></li>
-                <li><a class="nav-link" href="blog.html">Blog</a></li>
-                <li><a class="nav-link" href="calendar.html">Calendar</a></li>
+                <li><a class="nav-link" href="{% url 'chat' %}">Chat</a></li>
+                <li><a class="nav-link" href="{% url 'portfolio' %}">Portfolio</a></li>
+                <li><a class="nav-link" href="{% url 'blog' %}">Blog</a></li>
+                <li><a class="nav-link" href="{% url 'calendar' %}">Calendar</a></li>
               </ul>
             </li>
             <li class="dropdown">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="mail"></i><span>Email</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="email-inbox.html">Inbox</a></li>
-                <li><a class="nav-link" href="email-compose.html">Compose</a></li>
-                <li><a class="nav-link" href="email-read.html">read</a></li>
+                <li><a class="nav-link" href="{% url 'email_inbox' %}">Inbox</a></li>
+                <li><a class="nav-link" href="{% url 'email_compose' %}">Compose</a></li>
+                <li><a class="nav-link" href="{% url 'email_read' %}">read</a></li>
               </ul>
             </li>
             <li class="menu-header">UI Elements</li>
@@ -216,147 +217,147 @@
               <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="copy"></i><span>Basic
                   Components</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="alert.html">Alert</a></li>
-                <li><a class="nav-link" href="badge.html">Badge</a></li>
-                <li><a class="nav-link" href="breadcrumb.html">Breadcrumb</a></li>
-                <li><a class="nav-link" href="buttons.html">Buttons</a></li>
-                <li><a class="nav-link" href="collapse.html">Collapse</a></li>
-                <li><a class="nav-link" href="dropdown.html">Dropdown</a></li>
-                <li><a class="nav-link" href="checkbox-and-radio.html">Checkbox &amp; Radios</a></li>
-                <li><a class="nav-link" href="list-group.html">List Group</a></li>
-                <li><a class="nav-link" href="media-object.html">Media Object</a></li>
-                <li><a class="nav-link" href="navbar.html">Navbar</a></li>
-                <li><a class="nav-link" href="pagination.html">Pagination</a></li>
-                <li><a class="nav-link" href="popover.html">Popover</a></li>
-                <li><a class="nav-link" href="progress.html">Progress</a></li>
-                <li><a class="nav-link" href="tooltip.html">Tooltip</a></li>
-                <li><a class="nav-link" href="flags.html">Flag</a></li>
-                <li><a class="nav-link" href="typography.html">Typography</a></li>
+                <li><a class="nav-link" href="{% url 'alert' %}">Alert</a></li>
+                <li><a class="nav-link" href="{% url 'badge' %}">Badge</a></li>
+                <li><a class="nav-link" href="{% url 'breadcrumb' %}">Breadcrumb</a></li>
+                <li><a class="nav-link" href="{% url 'buttons' %}">Buttons</a></li>
+                <li><a class="nav-link" href="{% url 'collapse' %}">Collapse</a></li>
+                <li><a class="nav-link" href="{% url 'dropdown' %}">Dropdown</a></li>
+                <li><a class="nav-link" href="{% url 'checkbox_and_radio' %}">Checkbox &amp; Radios</a></li>
+                <li><a class="nav-link" href="{% url 'list_group' %}">List Group</a></li>
+                <li><a class="nav-link" href="{% url 'media_object' %}">Media Object</a></li>
+                <li><a class="nav-link" href="{% url 'navbar' %}">Navbar</a></li>
+                <li><a class="nav-link" href="{% url 'pagination' %}">Pagination</a></li>
+                <li><a class="nav-link" href="{% url 'popover' %}">Popover</a></li>
+                <li><a class="nav-link" href="{% url 'progress' %}">Progress</a></li>
+                <li><a class="nav-link" href="{% url 'tooltip' %}">Tooltip</a></li>
+                <li><a class="nav-link" href="{% url 'flags' %}">Flag</a></li>
+                <li><a class="nav-link" href="{% url 'typography' %}">Typography</a></li>
               </ul>
             </li>
             <li class="dropdown">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i
                   data-feather="shopping-bag"></i><span>Advanced</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="avatar.html">Avatar</a></li>
-                <li><a class="nav-link" href="card.html">Card</a></li>
-                <li><a class="nav-link" href="modal.html">Modal</a></li>
-                <li><a class="nav-link" href="sweet-alert.html">Sweet Alert</a></li>
-                <li><a class="nav-link" href="toastr.html">Toastr</a></li>
-                <li><a class="nav-link" href="empty-state.html">Empty State</a></li>
-                <li><a class="nav-link" href="multiple-upload.html">Multiple Upload</a></li>
-                <li><a class="nav-link" href="pricing.html">Pricing</a></li>
-                <li><a class="nav-link" href="tabs.html">Tab</a></li>
+                <li><a class="nav-link" href="{% url 'avatar' %}">Avatar</a></li>
+                <li><a class="nav-link" href="{% url 'card' %}">Card</a></li>
+                <li><a class="nav-link" href="{% url 'modal' %}">Modal</a></li>
+                <li><a class="nav-link" href="{% url 'sweet_alert' %}">Sweet Alert</a></li>
+                <li><a class="nav-link" href="{% url 'toastr' %}">Toastr</a></li>
+                <li><a class="nav-link" href="{% url 'empty_state' %}">Empty State</a></li>
+                <li><a class="nav-link" href="{% url 'multiple_upload' %}">Multiple Upload</a></li>
+                <li><a class="nav-link" href="{% url 'pricing' %}">Pricing</a></li>
+                <li><a class="nav-link" href="{% url 'tabs' %}">Tab</a></li>
               </ul>
             </li>
-            <li><a class="nav-link" href="blank.html"><i data-feather="file"></i><span>Blank Page</span></a></li>
+            <li><a class="nav-link" href="{% url 'blank' %}"><i data-feather="file"></i><span>Blank Page</span></a></li>
             <li class="menu-header">Otika</li>
             <li class="dropdown">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="layout"></i><span>Forms</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="basic-form.html">Basic Form</a></li>
-                <li><a class="nav-link" href="forms-advanced-form.html">Advanced Form</a></li>
-                <li><a class="nav-link" href="forms-editor.html">Editor</a></li>
-                <li><a class="nav-link" href="forms-validation.html">Validation</a></li>
-                <li><a class="nav-link" href="form-wizard.html">Form Wizard</a></li>
+                <li><a class="nav-link" href="{% url 'basic_form' %}">Basic Form</a></li>
+                <li><a class="nav-link" href="{% url 'forms_advanced_form' %}">Advanced Form</a></li>
+                <li><a class="nav-link" href="{% url 'forms_editor' %}">Editor</a></li>
+                <li><a class="nav-link" href="{% url 'forms_validation' %}">Validation</a></li>
+                <li><a class="nav-link" href="{% url 'form_wizard' %}">Form Wizard</a></li>
               </ul>
             </li>
             <li class="dropdown">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="grid"></i><span>Tables</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="basic-table.html">Basic Tables</a></li>
-                <li><a class="nav-link" href="advance-table.html">Advanced Table</a></li>
-                <li><a class="nav-link" href="datatables.html">Datatable</a></li>
-                <li><a class="nav-link" href="export-table.html">Export Table</a></li>
-                <li><a class="nav-link" href="editable-table.html">Editable Table</a></li>
+                <li><a class="nav-link" href="{% url 'basic_table' %}">Basic Tables</a></li>
+                <li><a class="nav-link" href="{% url 'advance_table' %}">Advanced Table</a></li>
+                <li><a class="nav-link" href="{% url 'datatables' %}">Datatable</a></li>
+                <li><a class="nav-link" href="{% url 'export_table' %}">Export Table</a></li>
+                <li><a class="nav-link" href="{% url 'editable_table' %}">Editable Table</a></li>
               </ul>
             </li>
             <li class="dropdown">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i
                   data-feather="pie-chart"></i><span>Charts</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="chart-amchart.html">amChart</a></li>
-                <li><a class="nav-link" href="chart-apexchart.html">apexchart</a></li>
-                <li><a class="nav-link" href="chart-echart.html">eChart</a></li>
-                <li><a class="nav-link" href="chart-chartjs.html">Chartjs</a></li>
-                <li><a class="nav-link" href="chart-sparkline.html">Sparkline</a></li>
-                <li><a class="nav-link" href="chart-morris.html">Morris</a></li>
+                <li><a class="nav-link" href="{% url 'chart_amchart' %}">amChart</a></li>
+                <li><a class="nav-link" href="{% url 'chart_apexchart' %}">apexchart</a></li>
+                <li><a class="nav-link" href="{% url 'chart_echart' %}">eChart</a></li>
+                <li><a class="nav-link" href="{% url 'chart_chartjs' %}">Chartjs</a></li>
+                <li><a class="nav-link" href="{% url 'chart_sparkline' %}">Sparkline</a></li>
+                <li><a class="nav-link" href="{% url 'chart_morris' %}">Morris</a></li>
               </ul>
             </li>
             <li class="dropdown">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="feather"></i><span>Icons</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="icon-font-awesome.html">Font Awesome</a></li>
-                <li><a class="nav-link" href="icon-material.html">Material Design</a></li>
-                <li><a class="nav-link" href="icon-ionicons.html">Ion Icons</a></li>
-                <li><a class="nav-link" href="icon-feather.html">Feather Icons</a></li>
-                <li><a class="nav-link" href="icon-weather-icon.html">Weather Icon</a></li>
+                <li><a class="nav-link" href="{% url 'icon_font_awesome' %}">Font Awesome</a></li>
+                <li><a class="nav-link" href="{% url 'icon_material' %}">Material Design</a></li>
+                <li><a class="nav-link" href="{% url 'icon_ionicons' %}">Ion Icons</a></li>
+                <li><a class="nav-link" href="{% url 'icon_feather' %}">Feather Icons</a></li>
+                <li><a class="nav-link" href="{% url 'icon_weather_icon' %}">Weather Icon</a></li>
               </ul>
             </li>
             <li class="menu-header">Media</li>
             <li class="dropdown active">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="image"></i><span>Gallery</span></a>
               <ul class="dropdown-menu">
-                <li class="active"><a class="nav-link" href="light-gallery.html">Light Gallery</a></li>
-                <li><a href="gallery1.html">Gallery 2</a></li>
+                <li class="active"><a class="nav-link" href="{% url 'light_gallery' %}">Light Gallery</a></li>
+                <li><a href="{% url 'gallery1' %}">Gallery 2</a></li>
               </ul>
             </li>
             <li class="dropdown">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="flag"></i><span>Sliders</span></a>
               <ul class="dropdown-menu">
-                <li><a href="carousel.html">Bootstrap Carousel.html</a></li>
-                <li><a class="nav-link" href="owl-carousel.html">Owl Carousel</a></li>
+                <li><a href="{% url 'carousel' %}">Bootstrap Carousel.html</a></li>
+                <li><a class="nav-link" href="{% url 'owl_carousel' %}">Owl Carousel</a></li>
               </ul>
             </li>
-            <li><a class="nav-link" href="timeline.html"><i data-feather="sliders"></i><span>Timeline</span></a></li>
+            <li><a class="nav-link" href="{% url 'timeline' %}"><i data-feather="sliders"></i><span>Timeline</span></a></li>
             <li class="menu-header">Maps</li>
             <li class="dropdown">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="map"></i><span>Google
                   Maps</span></a>
               <ul class="dropdown-menu">
-                <li><a href="gmaps-advanced-route.html">Advanced Route</a></li>
-                <li><a href="gmaps-draggable-marker.html">Draggable Marker</a></li>
-                <li><a href="gmaps-geocoding.html">Geocoding</a></li>
-                <li><a href="gmaps-geolocation.html">Geolocation</a></li>
-                <li><a href="gmaps-marker.html">Marker</a></li>
-                <li><a href="gmaps-multiple-marker.html">Multiple Marker</a></li>
-                <li><a href="gmaps-route.html">Route</a></li>
-                <li><a href="gmaps-simple.html">Simple</a></li>
+                <li><a href="{% url 'gmaps_advanced_route' %}">Advanced Route</a></li>
+                <li><a href="{% url 'gmaps_draggable_marker' %}">Draggable Marker</a></li>
+                <li><a href="{% url 'gmaps_geocoding' %}">Geocoding</a></li>
+                <li><a href="{% url 'gmaps_geolocation' %}">Geolocation</a></li>
+                <li><a href="{% url 'gmaps_marker' %}">Marker</a></li>
+                <li><a href="{% url 'gmaps_multiple_marker' %}">Multiple Marker</a></li>
+                <li><a href="{% url 'gmaps_route' %}">Route</a></li>
+                <li><a href="{% url 'gmaps_simple' %}">Simple</a></li>
               </ul>
             </li>
-            <li><a class="nav-link" href="vector-map.html"><i data-feather="map-pin"></i><span>Vector
+            <li><a class="nav-link" href="{% url 'vector_map' %}"><i data-feather="map-pin"></i><span>Vector
                   Map</span></a></li>
             <li class="menu-header">Pages</li>
             <li class="dropdown">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i
                   data-feather="user-check"></i><span>Auth</span></a>
               <ul class="dropdown-menu">
-                <li><a href="auth-login.html">Login</a></li>
-                <li><a href="auth-register.html">Register</a></li>
-                <li><a href="auth-forgot-password.html">Forgot Password</a></li>
-                <li><a href="auth-reset-password.html">Reset Password</a></li>
-                <li><a href="subscribe.html">Subscribe</a></li>
+                <li><a href="{% url 'auth_login' %}">Login</a></li>
+                <li><a href="{% url 'auth_register' %}">Register</a></li>
+                <li><a href="{% url 'auth_forgot_password' %}">Forgot Password</a></li>
+                <li><a href="{% url 'auth_reset_password' %}">Reset Password</a></li>
+                <li><a href="{% url 'subscribe' %}">Subscribe</a></li>
               </ul>
             </li>
             <li class="dropdown">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i
                   data-feather="alert-triangle"></i><span>Errors</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="errors-503.html">503</a></li>
-                <li><a class="nav-link" href="errors-403.html">403</a></li>
-                <li><a class="nav-link" href="errors-404.html">404</a></li>
-                <li><a class="nav-link" href="errors-500.html">500</a></li>
+                <li><a class="nav-link" href="{% url 'errors_503' %}">503</a></li>
+                <li><a class="nav-link" href="{% url 'errors_403' %}">403</a></li>
+                <li><a class="nav-link" href="{% url 'errors_404' %}">404</a></li>
+                <li><a class="nav-link" href="{% url 'errors_500' %}">500</a></li>
               </ul>
             </li>
             <li class="dropdown">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="anchor"></i><span>Other
                   Pages</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="create-post.html">Create Post</a></li>
-                <li><a class="nav-link" href="posts.html">Posts</a></li>
-                <li><a class="nav-link" href="profile.html">Profile</a></li>
-                <li><a class="nav-link" href="contact.html">Contact</a></li>
-                <li><a class="nav-link" href="invoice.html">Invoice</a></li>
+                <li><a class="nav-link" href="{% url 'create_post' %}">Create Post</a></li>
+                <li><a class="nav-link" href="{% url 'posts' %}">Posts</a></li>
+                <li><a class="nav-link" href="{% url 'profile' %}">Profile</a></li>
+                <li><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+                <li><a class="nav-link" href="{% url 'invoice' %}">Invoice</a></li>
               </ul>
             </li>
             <li class="dropdown">
@@ -396,113 +397,113 @@
                   <div class="card-body">
                     <div id="aniimated-thumbnials" class="list-unstyled row clearfix">
                       <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <a href="assets/img/image-gallery/1.png" data-sub-html="Demo Description">
-                          <img class="img-responsive thumbnail" src="assets/img/image-gallery/thumb/thumb-1.png" alt="">
+                        <a href="{% static 'assets/img/image-gallery/1.png' %}" data-sub-html="Demo Description">
+                          <img class="img-responsive thumbnail" src="{% static 'assets/img/image-gallery/thumb/thumb-1.png' %}" alt="">
                         </a>
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <a href="assets/img/image-gallery/2.png" data-sub-html="Demo Description">
-                          <img class="img-responsive thumbnail" src="assets/img/image-gallery/thumb/thumb-2.png" alt="">
+                        <a href="{% static 'assets/img/image-gallery/2.png' %}" data-sub-html="Demo Description">
+                          <img class="img-responsive thumbnail" src="{% static 'assets/img/image-gallery/thumb/thumb-2.png' %}" alt="">
                         </a>
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <a href="assets/img/image-gallery/3.png" data-sub-html="Demo Description">
-                          <img class="img-responsive thumbnail" src="assets/img/image-gallery/thumb/thumb-3.png" alt="">
+                        <a href="{% static 'assets/img/image-gallery/3.png' %}" data-sub-html="Demo Description">
+                          <img class="img-responsive thumbnail" src="{% static 'assets/img/image-gallery/thumb/thumb-3.png' %}" alt="">
                         </a>
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <a href="assets/img/image-gallery/4.png" data-sub-html="Demo Description">
-                          <img class="img-responsive thumbnail" src="assets/img/image-gallery/thumb/thumb-4.png" alt="">
+                        <a href="{% static 'assets/img/image-gallery/4.png' %}" data-sub-html="Demo Description">
+                          <img class="img-responsive thumbnail" src="{% static 'assets/img/image-gallery/thumb/thumb-4.png' %}" alt="">
                         </a>
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <a href="assets/img/image-gallery/5.png" data-sub-html="Demo Description">
-                          <img class="img-responsive thumbnail" src="assets/img/image-gallery/thumb/thumb-5.png" alt="">
+                        <a href="{% static 'assets/img/image-gallery/5.png' %}" data-sub-html="Demo Description">
+                          <img class="img-responsive thumbnail" src="{% static 'assets/img/image-gallery/thumb/thumb-5.png' %}" alt="">
                         </a>
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <a href="assets/img/image-gallery/6.png" data-sub-html="Demo Description">
-                          <img class="img-responsive thumbnail" src="assets/img/image-gallery/thumb/thumb-6.png" alt="">
+                        <a href="{% static 'assets/img/image-gallery/6.png' %}" data-sub-html="Demo Description">
+                          <img class="img-responsive thumbnail" src="{% static 'assets/img/image-gallery/thumb/thumb-6.png' %}" alt="">
                         </a>
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <a href="assets/img/image-gallery/7.png" data-sub-html="Demo Description">
-                          <img class="img-responsive thumbnail" src="assets/img/image-gallery/thumb/thumb-7.png" alt="">
+                        <a href="{% static 'assets/img/image-gallery/7.png' %}" data-sub-html="Demo Description">
+                          <img class="img-responsive thumbnail" src="{% static 'assets/img/image-gallery/thumb/thumb-7.png' %}" alt="">
                         </a>
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <a href="assets/img/image-gallery/8.png" data-sub-html="Demo Description">
-                          <img class="img-responsive thumbnail" src="assets/img/image-gallery/thumb/thumb-8.png" alt="">
+                        <a href="{% static 'assets/img/image-gallery/8.png' %}" data-sub-html="Demo Description">
+                          <img class="img-responsive thumbnail" src="{% static 'assets/img/image-gallery/thumb/thumb-8.png' %}" alt="">
                         </a>
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <a href="assets/img/image-gallery/9.png" data-sub-html="Demo Description">
-                          <img class="img-responsive thumbnail" src="assets/img/image-gallery/thumb/thumb-9.png" alt="">
+                        <a href="{% static 'assets/img/image-gallery/9.png' %}" data-sub-html="Demo Description">
+                          <img class="img-responsive thumbnail" src="{% static 'assets/img/image-gallery/thumb/thumb-9.png' %}" alt="">
                         </a>
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <a href="assets/img/image-gallery/10.png" data-sub-html="Demo Description">
-                          <img class="img-responsive thumbnail" src="assets/img/image-gallery/thumb/thumb-10.png"
+                        <a href="{% static 'assets/img/image-gallery/10.png' %}" data-sub-html="Demo Description">
+                          <img class="img-responsive thumbnail" src="{% static 'assets/img/image-gallery/thumb/thumb-10.png' %}"
                             alt="">
                         </a>
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <a href="assets/img/image-gallery/11.png" data-sub-html="Demo Description">
-                          <img class="img-responsive thumbnail" src="assets/img/image-gallery/thumb/thumb-11.png"
+                        <a href="{% static 'assets/img/image-gallery/11.png' %}" data-sub-html="Demo Description">
+                          <img class="img-responsive thumbnail" src="{% static 'assets/img/image-gallery/thumb/thumb-11.png' %}"
                             alt="">
                         </a>
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <a href="assets/img/image-gallery/12.png" data-sub-html="Demo Description">
-                          <img class="img-responsive thumbnail" src="assets/img/image-gallery/thumb/thumb-12.png"
+                        <a href="{% static 'assets/img/image-gallery/12.png' %}" data-sub-html="Demo Description">
+                          <img class="img-responsive thumbnail" src="{% static 'assets/img/image-gallery/thumb/thumb-12.png' %}"
                             alt="">
                         </a>
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <a href="assets/img/image-gallery/13.png" data-sub-html="Demo Description">
-                          <img class="img-responsive thumbnail" src="assets/img/image-gallery/thumb/thumb-13.png"
+                        <a href="{% static 'assets/img/image-gallery/13.png' %}" data-sub-html="Demo Description">
+                          <img class="img-responsive thumbnail" src="{% static 'assets/img/image-gallery/thumb/thumb-13.png' %}"
                             alt="">
                         </a>
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <a href="assets/img/image-gallery/14.png" data-sub-html="Demo Description">
-                          <img class="img-responsive thumbnail" src="assets/img/image-gallery/thumb/thumb-14.png"
+                        <a href="{% static 'assets/img/image-gallery/14.png' %}" data-sub-html="Demo Description">
+                          <img class="img-responsive thumbnail" src="{% static 'assets/img/image-gallery/thumb/thumb-14.png' %}"
                             alt="">
                         </a>
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <a href="assets/img/image-gallery/15.png" data-sub-html="Demo Description">
-                          <img class="img-responsive thumbnail" src="assets/img/image-gallery/thumb/thumb-15.png"
+                        <a href="{% static 'assets/img/image-gallery/15.png' %}" data-sub-html="Demo Description">
+                          <img class="img-responsive thumbnail" src="{% static 'assets/img/image-gallery/thumb/thumb-15.png' %}"
                             alt="">
                         </a>
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <a href="assets/img/image-gallery/16.png" data-sub-html="Demo Description">
-                          <img class="img-responsive thumbnail" src="assets/img/image-gallery/thumb/thumb-16.png"
+                        <a href="{% static 'assets/img/image-gallery/16.png' %}" data-sub-html="Demo Description">
+                          <img class="img-responsive thumbnail" src="{% static 'assets/img/image-gallery/thumb/thumb-16.png' %}"
                             alt="">
                         </a>
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <a href="assets/img/image-gallery/17.png" data-sub-html="Demo Description">
-                          <img class="img-responsive thumbnail" src="assets/img/image-gallery/thumb/thumb-17.png"
+                        <a href="{% static 'assets/img/image-gallery/17.png' %}" data-sub-html="Demo Description">
+                          <img class="img-responsive thumbnail" src="{% static 'assets/img/image-gallery/thumb/thumb-17.png' %}"
                             alt="">
                         </a>
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <a href="assets/img/image-gallery/18.png" data-sub-html="Demo Description">
-                          <img class="img-responsive thumbnail" src="assets/img/image-gallery/thumb/thumb-18.png"
+                        <a href="{% static 'assets/img/image-gallery/18.png' %}" data-sub-html="Demo Description">
+                          <img class="img-responsive thumbnail" src="{% static 'assets/img/image-gallery/thumb/thumb-18.png' %}"
                             alt="">
                         </a>
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <a href="assets/img/image-gallery/19.png" data-sub-html="Demo Description">
-                          <img class="img-responsive thumbnail" src="assets/img/image-gallery/thumb/thumb-19.png"
+                        <a href="{% static 'assets/img/image-gallery/19.png' %}" data-sub-html="Demo Description">
+                          <img class="img-responsive thumbnail" src="{% static 'assets/img/image-gallery/thumb/thumb-19.png' %}"
                             alt="">
                         </a>
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <a href="assets/img/image-gallery/20.png" data-sub-html="Demo Description">
-                          <img class="img-responsive thumbnail" src="assets/img/image-gallery/thumb/thumb-20.png"
+                        <a href="{% static 'assets/img/image-gallery/20.png' %}" data-sub-html="Demo Description">
+                          <img class="img-responsive thumbnail" src="{% static 'assets/img/image-gallery/thumb/thumb-20.png' %}"
                             alt="">
                         </a>
                       </div>
@@ -615,15 +616,15 @@
     </div>
   </div>
   <!-- General JS Scripts -->
-  <script src="assets/js/app.min.js"></script>
+  <script src="{% static 'assets/js/app.min.js' %}"></script>
   <!-- JS Libraies -->
-  <script src="assets/bundles/lightgallery/dist/js/lightgallery-all.js"></script>
+  <script src="{% static 'assets/bundles/lightgallery/dist/js/lightgallery-all.js' %}"></script>
   <!-- Page Specific JS File -->
-  <script src="assets/js/page/light-gallery.js"></script>
+  <script src="{% static 'assets/js/page/light-gallery.js' %}"></script>
   <!-- Template JS File -->
-  <script src="assets/js/scripts.js"></script>
+  <script src="{% static 'assets/js/scripts.js' %}"></script>
   <!-- Custom JS File -->
-  <script src="assets/js/custom.js"></script>
+  <script src="{% static 'assets/js/custom.js' %}"></script>
 </body>
 
 

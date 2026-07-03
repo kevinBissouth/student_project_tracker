@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,17 +9,17 @@
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
   <title>Otika - Admin Dashboard Template</title>
   <!-- General CSS Files -->
-  <link rel="stylesheet" href="assets/css/app.min.css">
-  <link rel="stylesheet" href="assets/bundles/bootstrap-social/bootstrap-social.css">
-  <link rel="stylesheet" href="assets/bundles/owlcarousel2/dist/assets/owl.carousel.min.css">
-  <link rel="stylesheet" href="assets/bundles/owlcarousel2/dist/assets/owl.theme.default.min.css">
-  <link rel="stylesheet" href="assets/bundles/summernote/summernote-bs4.css">
+  <link rel="stylesheet" href="{% static 'assets/css/app.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/bundles/bootstrap-social/bootstrap-social.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/bundles/owlcarousel2/dist/assets/owl.carousel.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/bundles/owlcarousel2/dist/assets/owl.theme.default.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/bundles/summernote/summernote-bs4.css' %}">
   <!-- Template CSS -->
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/components.css' %}">
   <!-- Custom style CSS -->
-  <link rel="stylesheet" href="assets/css/custom.css">
-  <link rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico' />
+  <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
+  <link rel='shortcut icon' type='image/x-icon' href='{% static 'assets/img/favicon.ico' %}' />
 </head>
 
 <body>
@@ -60,27 +61,27 @@
               </div>
               <div class="dropdown-list-content dropdown-list-message">
                 <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar
-											text-white"> <img alt="image" src="assets/img/users/user-1.png" class="rounded-circle">
+											text-white"> <img alt="image" src="{% static 'assets/img/users/user-1.png' %}" class="rounded-circle">
                   </span> <span class="dropdown-item-desc"> <span class="message-user">John
                       Deo</span>
                     <span class="time messege-text">Please check your mail !!</span>
                     <span class="time">2 Min Ago</span>
                   </span>
                 </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
-                    <img alt="image" src="assets/img/users/user-2.png" class="rounded-circle">
+                    <img alt="image" src="{% static 'assets/img/users/user-2.png' %}" class="rounded-circle">
                   </span> <span class="dropdown-item-desc"> <span class="message-user">Sarah
                       Smith</span> <span class="time messege-text">Request for leave
                       application</span>
                     <span class="time">5 Min Ago</span>
                   </span>
                 </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
-                    <img alt="image" src="assets/img/users/user-5.png" class="rounded-circle">
+                    <img alt="image" src="{% static 'assets/img/users/user-5.png' %}" class="rounded-circle">
                   </span> <span class="dropdown-item-desc"> <span class="message-user">Jacob
                       Ryan</span> <span class="time messege-text">Your payment invoice is
                       generated.</span> <span class="time">12 Min Ago</span>
                   </span>
                 </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
-                    <img alt="image" src="assets/img/users/user-4.png" class="rounded-circle">
+                    <img alt="image" src="{% static 'assets/img/users/user-4.png' %}" class="rounded-circle">
                   </span> <span class="dropdown-item-desc"> <span class="message-user">Lina
                       Smith</span> <span class="time messege-text">hii John, I have upload
                       doc
@@ -88,7 +89,7 @@
                       Min Ago</span>
                   </span>
                 </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
-                    <img alt="image" src="assets/img/users/user-3.png" class="rounded-circle">
+                    <img alt="image" src="{% static 'assets/img/users/user-3.png' %}" class="rounded-circle">
                   </span> <span class="dropdown-item-desc"> <span class="message-user">Jalpa
                       Joshi</span> <span class="time messege-text">Please do as specify.
                       Let me
@@ -96,7 +97,7 @@
                       Days Ago</span>
                   </span>
                 </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
-                    <img alt="image" src="assets/img/users/user-2.png" class="rounded-circle">
+                    <img alt="image" src="{% static 'assets/img/users/user-2.png' %}" class="rounded-circle">
                   </span> <span class="dropdown-item-desc"> <span class="message-user">Sarah
                       Smith</span> <span class="time messege-text">Client Requirements</span>
                     <span class="time">2 Days Ago</span>
@@ -158,19 +159,19 @@
             </div>
           </li>
           <li class="dropdown"><a href="#" data-toggle="dropdown"
-              class="nav-link dropdown-toggle nav-link-lg nav-link-user"> <img alt="image" src="assets/img/user.png"
+              class="nav-link dropdown-toggle nav-link-lg nav-link-user"> <img alt="image" src="{% static 'assets/img/user.png' %}"
                 class="user-img-radious-style"> <span class="d-sm-none d-lg-inline-block"></span></a>
             <div class="dropdown-menu dropdown-menu-right pullDown">
               <div class="dropdown-title">Hello Sarah Smith</div>
-              <a href="profile.html" class="dropdown-item has-icon"> <i class="far
+              <a href="{% url 'profile' %}" class="dropdown-item has-icon"> <i class="far
 										fa-user"></i> Profile
-              </a> <a href="timeline.html" class="dropdown-item has-icon"> <i class="fas fa-bolt"></i>
+              </a> <a href="{% url 'timeline' %}" class="dropdown-item has-icon"> <i class="fas fa-bolt"></i>
                 Activities
               </a> <a href="#" class="dropdown-item has-icon"> <i class="fas fa-cog"></i>
                 Settings
               </a>
               <div class="dropdown-divider"></div>
-              <a href="auth-login.html" class="dropdown-item has-icon text-danger"> <i class="fas fa-sign-out-alt"></i>
+              <a href="{% url 'auth_login' %}" class="dropdown-item has-icon text-danger"> <i class="fas fa-sign-out-alt"></i>
                 Logout
               </a>
             </div>
@@ -180,38 +181,38 @@
       <div class="main-sidebar sidebar-style-2">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="index.html"> <img alt="image" src="assets/img/logo.png" class="header-logo" /> <span
+            <a href="{% url 'dashboard_html' %}"> <img alt="image" src="{% static 'assets/img/logo.png' %}" class="header-logo" /> <span
                 class="logo-name">Otika</span>
             </a>
           </div>
           <ul class="sidebar-menu">
             <li class="menu-header">Main</li>
             <li class="dropdown">
-              <a href="index.html" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
+              <a href="{% url 'dashboard_html' %}" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
             </li>
             <li class="dropdown active">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i
                   data-feather="briefcase"></i><span>Widgets</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="widget-chart.html">Chart Widgets</a></li>
-                <li class="active"><a class="nav-link" href="widget-data.html">Data Widgets</a></li>
+                <li><a class="nav-link" href="{% url 'widget_chart' %}">Chart Widgets</a></li>
+                <li class="active"><a class="nav-link" href="{% url 'widget_data' %}">Data Widgets</a></li>
               </ul>
             </li>
             <li class="dropdown">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="command"></i><span>Apps</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="chat.html">Chat</a></li>
-                <li><a class="nav-link" href="portfolio.html">Portfolio</a></li>
-                <li><a class="nav-link" href="blog.html">Blog</a></li>
-                <li><a class="nav-link" href="calendar.html">Calendar</a></li>
+                <li><a class="nav-link" href="{% url 'chat' %}">Chat</a></li>
+                <li><a class="nav-link" href="{% url 'portfolio' %}">Portfolio</a></li>
+                <li><a class="nav-link" href="{% url 'blog' %}">Blog</a></li>
+                <li><a class="nav-link" href="{% url 'calendar' %}">Calendar</a></li>
               </ul>
             </li>
             <li class="dropdown">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="mail"></i><span>Email</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="email-inbox.html">Inbox</a></li>
-                <li><a class="nav-link" href="email-compose.html">Compose</a></li>
-                <li><a class="nav-link" href="email-read.html">read</a></li>
+                <li><a class="nav-link" href="{% url 'email_inbox' %}">Inbox</a></li>
+                <li><a class="nav-link" href="{% url 'email_compose' %}">Compose</a></li>
+                <li><a class="nav-link" href="{% url 'email_read' %}">read</a></li>
               </ul>
             </li>
             <li class="menu-header">UI Elements</li>
@@ -219,147 +220,147 @@
               <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="copy"></i><span>Basic
                   Components</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="alert.html">Alert</a></li>
-                <li><a class="nav-link" href="badge.html">Badge</a></li>
-                <li><a class="nav-link" href="breadcrumb.html">Breadcrumb</a></li>
-                <li><a class="nav-link" href="buttons.html">Buttons</a></li>
-                <li><a class="nav-link" href="collapse.html">Collapse</a></li>
-                <li><a class="nav-link" href="dropdown.html">Dropdown</a></li>
-                <li><a class="nav-link" href="checkbox-and-radio.html">Checkbox &amp; Radios</a></li>
-                <li><a class="nav-link" href="list-group.html">List Group</a></li>
-                <li><a class="nav-link" href="media-object.html">Media Object</a></li>
-                <li><a class="nav-link" href="navbar.html">Navbar</a></li>
-                <li><a class="nav-link" href="pagination.html">Pagination</a></li>
-                <li><a class="nav-link" href="popover.html">Popover</a></li>
-                <li><a class="nav-link" href="progress.html">Progress</a></li>
-                <li><a class="nav-link" href="tooltip.html">Tooltip</a></li>
-                <li><a class="nav-link" href="flags.html">Flag</a></li>
-                <li><a class="nav-link" href="typography.html">Typography</a></li>
+                <li><a class="nav-link" href="{% url 'alert' %}">Alert</a></li>
+                <li><a class="nav-link" href="{% url 'badge' %}">Badge</a></li>
+                <li><a class="nav-link" href="{% url 'breadcrumb' %}">Breadcrumb</a></li>
+                <li><a class="nav-link" href="{% url 'buttons' %}">Buttons</a></li>
+                <li><a class="nav-link" href="{% url 'collapse' %}">Collapse</a></li>
+                <li><a class="nav-link" href="{% url 'dropdown' %}">Dropdown</a></li>
+                <li><a class="nav-link" href="{% url 'checkbox_and_radio' %}">Checkbox &amp; Radios</a></li>
+                <li><a class="nav-link" href="{% url 'list_group' %}">List Group</a></li>
+                <li><a class="nav-link" href="{% url 'media_object' %}">Media Object</a></li>
+                <li><a class="nav-link" href="{% url 'navbar' %}">Navbar</a></li>
+                <li><a class="nav-link" href="{% url 'pagination' %}">Pagination</a></li>
+                <li><a class="nav-link" href="{% url 'popover' %}">Popover</a></li>
+                <li><a class="nav-link" href="{% url 'progress' %}">Progress</a></li>
+                <li><a class="nav-link" href="{% url 'tooltip' %}">Tooltip</a></li>
+                <li><a class="nav-link" href="{% url 'flags' %}">Flag</a></li>
+                <li><a class="nav-link" href="{% url 'typography' %}">Typography</a></li>
               </ul>
             </li>
             <li class="dropdown">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i
                   data-feather="shopping-bag"></i><span>Advanced</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="avatar.html">Avatar</a></li>
-                <li><a class="nav-link" href="card.html">Card</a></li>
-                <li><a class="nav-link" href="modal.html">Modal</a></li>
-                <li><a class="nav-link" href="sweet-alert.html">Sweet Alert</a></li>
-                <li><a class="nav-link" href="toastr.html">Toastr</a></li>
-                <li><a class="nav-link" href="empty-state.html">Empty State</a></li>
-                <li><a class="nav-link" href="multiple-upload.html">Multiple Upload</a></li>
-                <li><a class="nav-link" href="pricing.html">Pricing</a></li>
-                <li><a class="nav-link" href="tabs.html">Tab</a></li>
+                <li><a class="nav-link" href="{% url 'avatar' %}">Avatar</a></li>
+                <li><a class="nav-link" href="{% url 'card' %}">Card</a></li>
+                <li><a class="nav-link" href="{% url 'modal' %}">Modal</a></li>
+                <li><a class="nav-link" href="{% url 'sweet_alert' %}">Sweet Alert</a></li>
+                <li><a class="nav-link" href="{% url 'toastr' %}">Toastr</a></li>
+                <li><a class="nav-link" href="{% url 'empty_state' %}">Empty State</a></li>
+                <li><a class="nav-link" href="{% url 'multiple_upload' %}">Multiple Upload</a></li>
+                <li><a class="nav-link" href="{% url 'pricing' %}">Pricing</a></li>
+                <li><a class="nav-link" href="{% url 'tabs' %}">Tab</a></li>
               </ul>
             </li>
-            <li><a class="nav-link" href="blank.html"><i data-feather="file"></i><span>Blank Page</span></a></li>
+            <li><a class="nav-link" href="{% url 'blank' %}"><i data-feather="file"></i><span>Blank Page</span></a></li>
             <li class="menu-header">Otika</li>
             <li class="dropdown">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="layout"></i><span>Forms</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="basic-form.html">Basic Form</a></li>
-                <li><a class="nav-link" href="forms-advanced-form.html">Advanced Form</a></li>
-                <li><a class="nav-link" href="forms-editor.html">Editor</a></li>
-                <li><a class="nav-link" href="forms-validation.html">Validation</a></li>
-                <li><a class="nav-link" href="form-wizard.html">Form Wizard</a></li>
+                <li><a class="nav-link" href="{% url 'basic_form' %}">Basic Form</a></li>
+                <li><a class="nav-link" href="{% url 'forms_advanced_form' %}">Advanced Form</a></li>
+                <li><a class="nav-link" href="{% url 'forms_editor' %}">Editor</a></li>
+                <li><a class="nav-link" href="{% url 'forms_validation' %}">Validation</a></li>
+                <li><a class="nav-link" href="{% url 'form_wizard' %}">Form Wizard</a></li>
               </ul>
             </li>
             <li class="dropdown">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="grid"></i><span>Tables</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="basic-table.html">Basic Tables</a></li>
-                <li><a class="nav-link" href="advance-table.html">Advanced Table</a></li>
-                <li><a class="nav-link" href="datatables.html">Datatable</a></li>
-                <li><a class="nav-link" href="export-table.html">Export Table</a></li>
-                <li><a class="nav-link" href="editable-table.html">Editable Table</a></li>
+                <li><a class="nav-link" href="{% url 'basic_table' %}">Basic Tables</a></li>
+                <li><a class="nav-link" href="{% url 'advance_table' %}">Advanced Table</a></li>
+                <li><a class="nav-link" href="{% url 'datatables' %}">Datatable</a></li>
+                <li><a class="nav-link" href="{% url 'export_table' %}">Export Table</a></li>
+                <li><a class="nav-link" href="{% url 'editable_table' %}">Editable Table</a></li>
               </ul>
             </li>
             <li class="dropdown">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i
                   data-feather="pie-chart"></i><span>Charts</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="chart-amchart.html">amChart</a></li>
-                <li><a class="nav-link" href="chart-apexchart.html">apexchart</a></li>
-                <li><a class="nav-link" href="chart-echart.html">eChart</a></li>
-                <li><a class="nav-link" href="chart-chartjs.html">Chartjs</a></li>
-                <li><a class="nav-link" href="chart-sparkline.html">Sparkline</a></li>
-                <li><a class="nav-link" href="chart-morris.html">Morris</a></li>
+                <li><a class="nav-link" href="{% url 'chart_amchart' %}">amChart</a></li>
+                <li><a class="nav-link" href="{% url 'chart_apexchart' %}">apexchart</a></li>
+                <li><a class="nav-link" href="{% url 'chart_echart' %}">eChart</a></li>
+                <li><a class="nav-link" href="{% url 'chart_chartjs' %}">Chartjs</a></li>
+                <li><a class="nav-link" href="{% url 'chart_sparkline' %}">Sparkline</a></li>
+                <li><a class="nav-link" href="{% url 'chart_morris' %}">Morris</a></li>
               </ul>
             </li>
             <li class="dropdown">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="feather"></i><span>Icons</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="icon-font-awesome.html">Font Awesome</a></li>
-                <li><a class="nav-link" href="icon-material.html">Material Design</a></li>
-                <li><a class="nav-link" href="icon-ionicons.html">Ion Icons</a></li>
-                <li><a class="nav-link" href="icon-feather.html">Feather Icons</a></li>
-                <li><a class="nav-link" href="icon-weather-icon.html">Weather Icon</a></li>
+                <li><a class="nav-link" href="{% url 'icon_font_awesome' %}">Font Awesome</a></li>
+                <li><a class="nav-link" href="{% url 'icon_material' %}">Material Design</a></li>
+                <li><a class="nav-link" href="{% url 'icon_ionicons' %}">Ion Icons</a></li>
+                <li><a class="nav-link" href="{% url 'icon_feather' %}">Feather Icons</a></li>
+                <li><a class="nav-link" href="{% url 'icon_weather_icon' %}">Weather Icon</a></li>
               </ul>
             </li>
             <li class="menu-header">Media</li>
             <li class="dropdown">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="image"></i><span>Gallery</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="light-gallery.html">Light Gallery</a></li>
-                <li><a href="gallery1.html">Gallery 2</a></li>
+                <li><a class="nav-link" href="{% url 'light_gallery' %}">Light Gallery</a></li>
+                <li><a href="{% url 'gallery1' %}">Gallery 2</a></li>
               </ul>
             </li>
             <li class="dropdown">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="flag"></i><span>Sliders</span></a>
               <ul class="dropdown-menu">
-                <li><a href="carousel.html">Bootstrap Carousel.html</a></li>
-                <li><a class="nav-link" href="owl-carousel.html">Owl Carousel</a></li>
+                <li><a href="{% url 'carousel' %}">Bootstrap Carousel.html</a></li>
+                <li><a class="nav-link" href="{% url 'owl_carousel' %}">Owl Carousel</a></li>
               </ul>
             </li>
-            <li><a class="nav-link" href="timeline.html"><i data-feather="sliders"></i><span>Timeline</span></a></li>
+            <li><a class="nav-link" href="{% url 'timeline' %}"><i data-feather="sliders"></i><span>Timeline</span></a></li>
             <li class="menu-header">Maps</li>
             <li class="dropdown">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="map"></i><span>Google
                   Maps</span></a>
               <ul class="dropdown-menu">
-                <li><a href="gmaps-advanced-route.html">Advanced Route</a></li>
-                <li><a href="gmaps-draggable-marker.html">Draggable Marker</a></li>
-                <li><a href="gmaps-geocoding.html">Geocoding</a></li>
-                <li><a href="gmaps-geolocation.html">Geolocation</a></li>
-                <li><a href="gmaps-marker.html">Marker</a></li>
-                <li><a href="gmaps-multiple-marker.html">Multiple Marker</a></li>
-                <li><a href="gmaps-route.html">Route</a></li>
-                <li><a href="gmaps-simple.html">Simple</a></li>
+                <li><a href="{% url 'gmaps_advanced_route' %}">Advanced Route</a></li>
+                <li><a href="{% url 'gmaps_draggable_marker' %}">Draggable Marker</a></li>
+                <li><a href="{% url 'gmaps_geocoding' %}">Geocoding</a></li>
+                <li><a href="{% url 'gmaps_geolocation' %}">Geolocation</a></li>
+                <li><a href="{% url 'gmaps_marker' %}">Marker</a></li>
+                <li><a href="{% url 'gmaps_multiple_marker' %}">Multiple Marker</a></li>
+                <li><a href="{% url 'gmaps_route' %}">Route</a></li>
+                <li><a href="{% url 'gmaps_simple' %}">Simple</a></li>
               </ul>
             </li>
-            <li><a class="nav-link" href="vector-map.html"><i data-feather="map-pin"></i><span>Vector
+            <li><a class="nav-link" href="{% url 'vector_map' %}"><i data-feather="map-pin"></i><span>Vector
                   Map</span></a></li>
             <li class="menu-header">Pages</li>
             <li class="dropdown">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i
                   data-feather="user-check"></i><span>Auth</span></a>
               <ul class="dropdown-menu">
-                <li><a href="auth-login.html">Login</a></li>
-                <li><a href="auth-register.html">Register</a></li>
-                <li><a href="auth-forgot-password.html">Forgot Password</a></li>
-                <li><a href="auth-reset-password.html">Reset Password</a></li>
-                <li><a href="subscribe.html">Subscribe</a></li>
+                <li><a href="{% url 'auth_login' %}">Login</a></li>
+                <li><a href="{% url 'auth_register' %}">Register</a></li>
+                <li><a href="{% url 'auth_forgot_password' %}">Forgot Password</a></li>
+                <li><a href="{% url 'auth_reset_password' %}">Reset Password</a></li>
+                <li><a href="{% url 'subscribe' %}">Subscribe</a></li>
               </ul>
             </li>
             <li class="dropdown">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i
                   data-feather="alert-triangle"></i><span>Errors</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="errors-503.html">503</a></li>
-                <li><a class="nav-link" href="errors-403.html">403</a></li>
-                <li><a class="nav-link" href="errors-404.html">404</a></li>
-                <li><a class="nav-link" href="errors-500.html">500</a></li>
+                <li><a class="nav-link" href="{% url 'errors_503' %}">503</a></li>
+                <li><a class="nav-link" href="{% url 'errors_403' %}">403</a></li>
+                <li><a class="nav-link" href="{% url 'errors_404' %}">404</a></li>
+                <li><a class="nav-link" href="{% url 'errors_500' %}">500</a></li>
               </ul>
             </li>
             <li class="dropdown">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="anchor"></i><span>Other
                   Pages</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="create-post.html">Create Post</a></li>
-                <li><a class="nav-link" href="posts.html">Posts</a></li>
-                <li><a class="nav-link" href="profile.html">Profile</a></li>
-                <li><a class="nav-link" href="contact.html">Contact</a></li>
-                <li><a class="nav-link" href="invoice.html">Invoice</a></li>
+                <li><a class="nav-link" href="{% url 'create_post' %}">Create Post</a></li>
+                <li><a class="nav-link" href="{% url 'posts' %}">Posts</a></li>
+                <li><a class="nav-link" href="{% url 'profile' %}">Profile</a></li>
+                <li><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+                <li><a class="nav-link" href="{% url 'invoice' %}">Invoice</a></li>
               </ul>
             </li>
             <li class="dropdown">
@@ -395,7 +396,7 @@
                 <div class="card author-box card-primary">
                   <div class="card-body">
                     <div class="author-box-left">
-                      <img alt="image" src="assets/img/users/user-1.png" class="rounded-circle author-box-picture">
+                      <img alt="image" src="{% static 'assets/img/users/user-1.png' %}" class="rounded-circle author-box-picture">
                       <div class="clearfix"></div>
                       <a href="#" class="btn btn-primary mt-3 follow-btn" data-follow-action="alert('follow clicked');"
                         data-unfollow-action="alert('unfollow clicked');">Follow</a>
@@ -445,7 +446,7 @@
                     <div class="owl-carousel owl-theme" id="users-carousel">
                       <div>
                         <div class="user-item">
-                          <img alt="image" src="assets/img/users/user-1.png" class="img-fluid">
+                          <img alt="image" src="{% static 'assets/img/users/user-1.png' %}" class="img-fluid">
                           <div class="user-details">
                             <div class="user-name">Sarah Smith</div>
                             <div class="text-job text-muted">Web Developer</div>
@@ -458,7 +459,7 @@
                       </div>
                       <div>
                         <div class="user-item">
-                          <img alt="image" src="assets/img/users/user-2.png" class="img-fluid">
+                          <img alt="image" src="{% static 'assets/img/users/user-2.png' %}" class="img-fluid">
                           <div class="user-details">
                             <div class="user-name">John Doe</div>
                             <div class="text-job text-muted">Mobile Developer</div>
@@ -471,7 +472,7 @@
                       </div>
                       <div>
                         <div class="user-item">
-                          <img alt="image" src="assets/img/users/user-3.png" class="img-fluid">
+                          <img alt="image" src="{% static 'assets/img/users/user-3.png' %}" class="img-fluid">
                           <div class="user-details">
                             <div class="user-name">Cara Stevens</div>
                             <div class="text-job text-muted">UI Designer</div>
@@ -485,7 +486,7 @@
                       </div>
                       <div>
                         <div class="user-item">
-                          <img alt="image" src="assets/img/users/user-4.png" class="img-fluid">
+                          <img alt="image" src="{% static 'assets/img/users/user-4.png' %}" class="img-fluid">
                           <div class="user-details">
                             <div class="user-name">Ashton Cox</div>
                             <div class="text-job text-muted">Project Manager</div>
@@ -498,7 +499,7 @@
                       </div>
                       <div>
                         <div class="user-item">
-                          <img alt="image" src="assets/img/users/user-5.png" class="img-fluid">
+                          <img alt="image" src="{% static 'assets/img/users/user-5.png' %}" class="img-fluid">
                           <div class="user-details">
                             <div class="user-name">Angelica Ramos</div>
                             <div class="text-job text-muted">IT Support</div>
@@ -516,7 +517,7 @@
               <div class="col-12 col-sm-12 col-lg-5">
                 <div class="card profile-widget">
                   <div class="profile-widget-header">
-                    <img alt="image" src="assets/img/users/user-1.png" class="rounded-circle profile-widget-picture">
+                    <img alt="image" src="{% static 'assets/img/users/user-1.png' %}" class="rounded-circle profile-widget-picture">
                     <div class="profile-widget-items">
                       <div class="profile-widget-item">
                         <div class="profile-widget-item-label">Posts</div>
@@ -566,7 +567,7 @@
                     <div class="row">
                       <div class="col-6 col-sm-3 col-lg-3 mb-4 mb-md-0">
                         <div class="avatar-item">
-                          <img alt="image" src="assets/img/users/user-1.png" class="img-fluid" data-toggle="tooltip"
+                          <img alt="image" src="{% static 'assets/img/users/user-1.png' %}" class="img-fluid" data-toggle="tooltip"
                             title="Ashton Cox">
                           <div class="avatar-badge" title="Editor" data-toggle="tooltip"><i class="fas fa-wrench"></i>
                           </div>
@@ -574,14 +575,14 @@
                       </div>
                       <div class="col-6 col-sm-3 col-lg-3 mb-4 mb-md-0">
                         <div class="avatar-item">
-                          <img alt="image" src="assets/img/users/user-2.png" class="img-fluid" data-toggle="tooltip"
+                          <img alt="image" src="{% static 'assets/img/users/user-2.png' %}" class="img-fluid" data-toggle="tooltip"
                             title="John Doe">
                           <div class="avatar-badge" title="Admin" data-toggle="tooltip"><i class="fas fa-cog"></i></div>
                         </div>
                       </div>
                       <div class="col-6 col-sm-3 col-lg-3 mb-4 mb-md-0">
                         <div class="avatar-item">
-                          <img alt="image" src="assets/img/users/user-3.png" class="img-fluid" data-toggle="tooltip"
+                          <img alt="image" src="{% static 'assets/img/users/user-3.png' %}" class="img-fluid" data-toggle="tooltip"
                             title="Airi Satou">
                           <div class="avatar-badge" title="Author" data-toggle="tooltip"><i
                               class="fas fa-pencil-alt"></i></div>
@@ -589,7 +590,7 @@
                       </div>
                       <div class="col-6 col-sm-3 col-lg-3 mb-4 mb-md-0">
                         <div class="avatar-item">
-                          <img alt="image" src="assets/img/users/user-4.png" class="img-fluid" data-toggle="tooltip"
+                          <img alt="image" src="{% static 'assets/img/users/user-4.png' %}" class="img-fluid" data-toggle="tooltip"
                             title="Hasan Basri">
                           <div class="avatar-badge" title="Author" data-toggle="tooltip"><i
                               class="fas fa-pencil-alt"></i></div>
@@ -599,7 +600,7 @@
                     <div class="row">
                       <div class="col-6 col-sm-3 col-lg-3 mb-4 mb-md-0">
                         <div class="avatar-item">
-                          <img alt="image" src="assets/img/users/user-5.png" class="img-fluid" data-toggle="tooltip"
+                          <img alt="image" src="{% static 'assets/img/users/user-5.png' %}" class="img-fluid" data-toggle="tooltip"
                             title="Airi Satou">
                           <div class="avatar-badge" title="Editor" data-toggle="tooltip"><i class="fas fa-wrench"></i>
                           </div>
@@ -607,14 +608,14 @@
                       </div>
                       <div class="col-6 col-sm-3 col-lg-3 mb-4 mb-md-0">
                         <div class="avatar-item">
-                          <img alt="image" src="assets/img/users/user-4.png" class="img-fluid" data-toggle="tooltip"
+                          <img alt="image" src="{% static 'assets/img/users/user-4.png' %}" class="img-fluid" data-toggle="tooltip"
                             title="Angelica Ramos">
                           <div class="avatar-badge" title="Admin" data-toggle="tooltip"><i class="fas fa-cog"></i></div>
                         </div>
                       </div>
                       <div class="col-6 col-sm-3 col-lg-3 mb-4 mb-md-0">
                         <div class="avatar-item">
-                          <img alt="image" src="assets/img/users/user-1.png" class="img-fluid" data-toggle="tooltip"
+                          <img alt="image" src="{% static 'assets/img/users/user-1.png' %}" class="img-fluid" data-toggle="tooltip"
                             title="Ashton Cox">
                           <div class="avatar-badge" title="Author" data-toggle="tooltip"><i
                               class="fas fa-pencil-alt"></i></div>
@@ -622,7 +623,7 @@
                       </div>
                       <div class="col-6 col-sm-3 col-lg-3 mb-4 mb-md-0">
                         <div class="avatar-item">
-                          <img alt="image" src="assets/img/users/user-2.png" class="img-fluid" data-toggle="tooltip"
+                          <img alt="image" src="{% static 'assets/img/users/user-2.png' %}" class="img-fluid" data-toggle="tooltip"
                             title="Cara Stevens">
                           <div class="avatar-badge" title="Admin" data-toggle="tooltip"><i class="fas fa-cog"></i></div>
                         </div>
@@ -693,7 +694,7 @@
                         <div class="text-title mb-2">January-2019</div>
                         <ul class="list-unstyled list-unstyled-border mb-0">
                           <li class="media">
-                            <img alt="image" src="assets/img/users/user-1.png"
+                            <img alt="image" src="{% static 'assets/img/users/user-1.png' %}"
                               class="mr-3 user-img-radious-style user-list-img" width="40">
                             <div class="media-body ml-3">
                               <div class="media-title">Sarah Smith</div>
@@ -701,7 +702,7 @@
                             </div>
                           </li>
                           <li class="media">
-                            <img alt="image" src="assets/img/users/user-2.png"
+                            <img alt="image" src="{% static 'assets/img/users/user-2.png' %}"
                               class="mr-3 user-img-radious-style user-list-img" width="40">
                             <div class="media-body ml-3">
                               <div class="media-title">John Doe</div>
@@ -709,7 +710,7 @@
                             </div>
                           </li>
                           <li class="media">
-                            <img alt="image" src="assets/img/users/user-3.png"
+                            <img alt="image" src="{% static 'assets/img/users/user-3.png' %}"
                               class="mr-3 user-img-radious-style user-list-img" width="40">
                             <div class="media-body ml-3">
                               <div class="media-title">Cara Stevens</div>
@@ -722,7 +723,7 @@
                         <div class="text-title mb-2">February-2019</div>
                         <ul class="list-unstyled list-unstyled-border list-unstyled-noborder mb-0">
                           <li class="media">
-                            <img alt="image" src="assets/img/users/user-4.png"
+                            <img alt="image" src="{% static 'assets/img/users/user-4.png' %}"
                               class="mr-3 user-img-radious-style user-list-img" width="40">
                             <div class="media-body ml-3">
                               <div class="media-title">Ashton Cox</div>
@@ -730,7 +731,7 @@
                             </div>
                           </li>
                           <li class="media">
-                            <img alt="image" src="assets/img/users/user-5.png"
+                            <img alt="image" src="{% static 'assets/img/users/user-5.png' %}"
                               class="mr-3 user-img-radious-style user-list-img" width="40">
                             <div class="media-body ml-3">
                               <div class="media-title">Airi Satou</div>
@@ -738,7 +739,7 @@
                             </div>
                           </li>
                           <li class="media">
-                            <img alt="image" src="assets/img/users/user-6.png"
+                            <img alt="image" src="{% static 'assets/img/users/user-6.png' %}"
                               class="mr-3 user-img-radious-style user-list-img" width="40">
                             <div class="media-body ml-3">
                               <div class="media-title">Hasan Basri</div>
@@ -761,7 +762,7 @@
                   <div class="card-body">
                     <ul class="list-unstyled list-unstyled-border list-unstyled-noborder">
                       <li class="media">
-                        <img alt="image" class="mr-3 rounded-circle" width="70" src="assets/img/users/user-1.png">
+                        <img alt="image" class="mr-3 rounded-circle" width="70" src="{% static 'assets/img/users/user-1.png' %}">
                         <div class="media-body">
                           <div class="media-right">
                             <div class="text-primary">Approved</div>
@@ -782,7 +783,7 @@
                         </div>
                       </li>
                       <li class="media">
-                        <img alt="image" class="mr-3 rounded-circle" width="70" src="assets/img/users/user-2.png">
+                        <img alt="image" class="mr-3 rounded-circle" width="70" src="{% static 'assets/img/users/user-2.png' %}">
                         <div class="media-body">
                           <div class="media-right">
                             <div class="text-warning">Pending</div>
@@ -803,7 +804,7 @@
                         </div>
                       </li>
                       <li class="media">
-                        <img alt="image" class="mr-3 rounded-circle" width="70" src="assets/img/users/user-3.png">
+                        <img alt="image" class="mr-3 rounded-circle" width="70" src="{% static 'assets/img/users/user-3.png' %}">
                         <div class="media-body">
                           <div class="media-right">
                             <div class="text-primary">Approved</div>
@@ -835,7 +836,7 @@
                   <div class="card-body">
                     <ul class="list-unstyled user-progress list-unstyled-border list-unstyled-noborder">
                       <li class="media">
-                        <img alt="image" class="mr-3 rounded-circle" width="50" src="assets/img/users/user-1.png">
+                        <img alt="image" class="mr-3 rounded-circle" width="50" src="{% static 'assets/img/users/user-1.png' %}">
                         <div class="media-body">
                           <div class="media-title">Cara Stevens</div>
                           <div class="text-job text-muted">Web Developer</div>
@@ -851,7 +852,7 @@
                         </div>
                       </li>
                       <li class="media">
-                        <img alt="image" class="mr-3 rounded-circle" width="50" src="assets/img/users/user-5.png">
+                        <img alt="image" class="mr-3 rounded-circle" width="50" src="{% static 'assets/img/users/user-5.png' %}">
                         <div class="media-body">
                           <div class="media-title">Ashton Cox</div>
                           <div class="text-job text-muted">Web Developer</div>
@@ -867,7 +868,7 @@
                         </div>
                       </li>
                       <li class="media">
-                        <img alt="image" class="mr-3 rounded-circle" width="50" src="assets/img/users/user-4.png">
+                        <img alt="image" class="mr-3 rounded-circle" width="50" src="{% static 'assets/img/users/user-4.png' %}">
                         <div class="media-body">
                           <div class="media-title">Sarah Smith</div>
                           <div class="text-job text-muted">Web Developer</div>
@@ -892,7 +893,7 @@
                   <div class="card-body">
                     <ul class="list-unstyled user-details list-unstyled-border list-unstyled-noborder">
                       <li class="media">
-                        <img alt="image" class="mr-3 rounded-circle" width="50" src="assets/img/users/user-1.png">
+                        <img alt="image" class="mr-3 rounded-circle" width="50" src="{% static 'assets/img/users/user-1.png' %}">
                         <div class="media-body">
                           <div class="media-title">Cara Stevens</div>
                           <div class="text-job text-muted">Web Developer</div>
@@ -913,7 +914,7 @@
                         </div>
                       </li>
                       <li class="media">
-                        <img alt="image" class="mr-3 rounded-circle" width="50" src="assets/img/users/user-5.png">
+                        <img alt="image" class="mr-3 rounded-circle" width="50" src="{% static 'assets/img/users/user-5.png' %}">
                         <div class="media-body">
                           <div class="media-title">Ashton Cox</div>
                           <div class="text-job text-muted">Web Developer</div>
@@ -934,7 +935,7 @@
                         </div>
                       </li>
                       <li class="media">
-                        <img alt="image" class="mr-3 rounded-circle" width="50" src="assets/img/users/user-4.png">
+                        <img alt="image" class="mr-3 rounded-circle" width="50" src="{% static 'assets/img/users/user-4.png' %}">
                         <div class="media-body">
                           <div class="media-title">Sarah Smith</div>
                           <div class="text-job text-muted">Web Developer</div>
@@ -975,7 +976,7 @@
                           <input type="checkbox" class="custom-control-input" id="cbx-1">
                           <label class="custom-control-label" for="cbx-1"></label>
                         </div>
-                        <img alt="image" class="mr-3 rounded-circle" width="50" src="assets/img/users/user-5.png">
+                        <img alt="image" class="mr-3 rounded-circle" width="50" src="{% static 'assets/img/users/user-5.png' %}">
                         <div class="media-body">
                           <div class="badge badge-pill badge-danger mb-1 float-right">Not Finished</div>
                           <h6 class="media-title"><a href="#">Logo design task</a></h6>
@@ -988,7 +989,7 @@
                           <input type="checkbox" class="custom-control-input" id="cbx-2" checked>
                           <label class="custom-control-label" for="cbx-2"></label>
                         </div>
-                        <img alt="image" class="mr-3 rounded-circle" width="50" src="assets/img/users/user-4.png">
+                        <img alt="image" class="mr-3 rounded-circle" width="50" src="{% static 'assets/img/users/user-4.png' %}">
                         <div class="media-body">
                           <div class="badge badge-pill badge-primary mb-1 float-right">Completed</div>
                           <h6 class="media-title"><a href="#">Changes related to upload file </a></h6>
@@ -1000,7 +1001,7 @@
                           <input type="checkbox" class="custom-control-input" id="cbx-3">
                           <label class="custom-control-label" for="cbx-3"></label>
                         </div>
-                        <img alt="image" class="mr-3 rounded-circle" width="50" src="assets/img/users/user-9.png">
+                        <img alt="image" class="mr-3 rounded-circle" width="50" src="{% static 'assets/img/users/user-9.png' %}">
                         <div class="media-body">
                           <div class="badge badge-pill badge-warning mb-1 float-right">Progress</div>
                           <h6 class="media-title"><a href="#">Upload build on server</a></h6>
@@ -1012,7 +1013,7 @@
                           <input type="checkbox" class="custom-control-input" id="cbx-4">
                           <label class="custom-control-label" for="cbx-4"></label>
                         </div>
-                        <img alt="image" class="mr-3 rounded-circle" width="50" src="assets/img/users/user-10.png">
+                        <img alt="image" class="mr-3 rounded-circle" width="50" src="{% static 'assets/img/users/user-10.png' %}">
                         <div class="media-body">
                           <div class="badge badge-pill badge-danger mb-1 float-right">Not Finished</div>
                           <h6 class="media-title"><a href="#">Deliverd product to client</a></h6>
@@ -1024,7 +1025,7 @@
                           <input type="checkbox" class="custom-control-input" id="cbx-8">
                           <label class="custom-control-label" for="cbx-8"></label>
                         </div>
-                        <img alt="image" class="mr-3 rounded-circle" width="50" src="assets/img/users/user-8.png">
+                        <img alt="image" class="mr-3 rounded-circle" width="50" src="{% static 'assets/img/users/user-8.png' %}">
                         <div class="media-body">
                           <div class="badge badge-pill badge-primary mb-1 float-right">Completed</div>
                           <h6 class="media-title"><a href="#">Admin panel bug solve</a></h6>
@@ -1537,21 +1538,21 @@
                   <div class="card-body">
                     <ul class="list-unstyled list-unstyled-border">
                       <li class="media">
-                        <img alt="image" class="mr-3 rounded-circle" width="50" src="assets/img/users/user-1.png">
+                        <img alt="image" class="mr-3 rounded-circle" width="50" src="{% static 'assets/img/users/user-1.png' %}">
                         <div class="media-body">
                           <div class="mt-0 mb-1 font-weight-bold">Cara Stevens</div>
                           <div class="text-success text-small font-600-bold"><i class="fas fa-circle"></i> Online</div>
                         </div>
                       </li>
                       <li class="media">
-                        <img alt="image" class="mr-3 rounded-circle" width="50" src="assets/img/users/user-2.png">
+                        <img alt="image" class="mr-3 rounded-circle" width="50" src="{% static 'assets/img/users/user-2.png' %}">
                         <div class="media-body">
                           <div class="mt-0 mb-1 font-weight-bold">Airi Satou</div>
                           <div class="text-small font-weight-600 text-muted"><i class="fas fa-circle"></i> Offline</div>
                         </div>
                       </li>
                       <li class="media">
-                        <img alt="image" class="mr-3 rounded-circle" width="50" src="assets/img/users/user-3.png">
+                        <img alt="image" class="mr-3 rounded-circle" width="50" src="{% static 'assets/img/users/user-3.png' %}">
                         <div class="media-body">
                           <div class="mt-0 mb-1 font-weight-bold">Ashton Cox</div>
                           <div class="text-small font-weight-600 text-success"><i class="fas fa-circle"></i> Online
@@ -1559,7 +1560,7 @@
                         </div>
                       </li>
                       <li class="media">
-                        <img alt="image" class="mr-3 rounded-circle" width="50" src="assets/img/users/user-4.png">
+                        <img alt="image" class="mr-3 rounded-circle" width="50" src="{% static 'assets/img/users/user-4.png' %}">
                         <div class="media-body">
                           <div class="mt-0 mb-1 font-weight-bold">Cara Stevens</div>
                           <div class="text-small font-weight-600 text-success"><i class="fas fa-circle"></i> Online
@@ -1588,7 +1589,7 @@
                   <div class="card-body" id="top-5-scroll">
                     <ul class="list-unstyled list-unstyled-border">
                       <li class="media">
-                        <img class="mr-3 rounded" width="55" src="assets/img/products/product-3.png" alt="product">
+                        <img class="mr-3 rounded" width="55" src="{% static 'assets/img/products/product-3.png' %}" alt="product">
                         <div class="media-body">
                           <div class="float-right">
                             <div class="font-weight-600 text-muted text-small">112 Sales</div>
@@ -1607,7 +1608,7 @@
                         </div>
                       </li>
                       <li class="media">
-                        <img class="mr-3 rounded" width="55" src="assets/img/products/product-4.png" alt="product">
+                        <img class="mr-3 rounded" width="55" src="{% static 'assets/img/products/product-4.png' %}" alt="product">
                         <div class="media-body">
                           <div class="float-right">
                             <div class="font-weight-600 text-muted text-small">49 Sales</div>
@@ -1626,7 +1627,7 @@
                         </div>
                       </li>
                       <li class="media">
-                        <img class="mr-3 rounded" width="55" src="assets/img/products/product-1.png" alt="product">
+                        <img class="mr-3 rounded" width="55" src="{% static 'assets/img/products/product-1.png' %}" alt="product">
                         <div class="media-body">
                           <div class="float-right">
                             <div class="font-weight-600 text-muted text-small">63 Sales</div>
@@ -1645,7 +1646,7 @@
                         </div>
                       </li>
                       <li class="media">
-                        <img class="mr-3 rounded" width="55" src="assets/img/products/product-2.png" alt="product">
+                        <img class="mr-3 rounded" width="55" src="{% static 'assets/img/products/product-2.png' %}" alt="product">
                         <div class="media-body">
                           <div class="float-right">
                             <div class="font-weight-600 text-muted text-small">28 Sales</div>
@@ -1664,7 +1665,7 @@
                         </div>
                       </li>
                       <li class="media">
-                        <img class="mr-3 rounded" width="55" src="assets/img/products/product-5.png" alt="product">
+                        <img class="mr-3 rounded" width="55" src="{% static 'assets/img/products/product-5.png' %}" alt="product">
                         <div class="media-body">
                           <div class="float-right">
                             <div class="font-weight-600 text-muted text-small">19 Sales</div>
@@ -1704,7 +1705,7 @@
                   <div class="card-body">
                     <ul class="list-unstyled list-unstyled-border user-list" id="message-list">
                       <li class="media">
-                        <img alt="image" src="assets/img/users/user-1.png"
+                        <img alt="image" src="{% static 'assets/img/users/user-1.png' %}"
                           class="mr-3 user-img-radious-style user-list-img">
                         <div class="media-body">
                           <div class="mt-0 font-weight-bold">Cara Stevens</div>
@@ -1712,7 +1713,7 @@
                         </div>
                       </li>
                       <li class="media">
-                        <img alt="image" src="assets/img/users/user-4.png"
+                        <img alt="image" src="{% static 'assets/img/users/user-4.png' %}"
                           class="mr-3 user-img-radious-style user-list-img">
                         <div class="media-body">
                           <div class="mt-0 font-weight-bold">Airi Satou</div>
@@ -1720,7 +1721,7 @@
                         </div>
                       </li>
                       <li class="media">
-                        <img alt="image" src="assets/img/users/user-1.png"
+                        <img alt="image" src="{% static 'assets/img/users/user-1.png' %}"
                           class="mr-3 user-img-radious-style user-list-img">
                         <div class="media-body">
                           <div class="mt-0 font-weight-bold">Angelica Ramos</div>
@@ -1728,7 +1729,7 @@
                         </div>
                       </li>
                       <li class="media">
-                        <img alt="image" src="assets/img/users/user-2.png"
+                        <img alt="image" src="{% static 'assets/img/users/user-2.png' %}"
                           class="mr-3 user-img-radious-style user-list-img">
                         <div class="media-body">
                           <div class="mt-0 font-weight-bold">Ashton Cox</div>
@@ -1736,7 +1737,7 @@
                         </div>
                       </li>
                       <li class="media">
-                        <img alt="image" src="assets/img/users/user-3.png"
+                        <img alt="image" src="{% static 'assets/img/users/user-3.png' %}"
                           class="mr-3 user-img-radious-style user-list-img">
                         <div class="media-body">
                           <div class="mt-0 font-weight-bold">Cara Stevens</div>
@@ -1852,17 +1853,17 @@
     </div>
   </div>
   <!-- General JS Scripts -->
-  <script src="assets/js/app.min.js"></script>
+  <script src="{% static 'assets/js/app.min.js' %}"></script>
   <!-- JS Libraies -->
-  <script src="assets/bundles/chartjs/chart.min.js"></script>
-  <script src="assets/bundles/owlcarousel2/dist/owl.carousel.min.js"></script>
-  <script src="assets/bundles/summernote/summernote-bs4.js"></script>
+  <script src="{% static 'assets/bundles/chartjs/chart.min.js' %}"></script>
+  <script src="{% static 'assets/bundles/owlcarousel2/dist/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'assets/bundles/summernote/summernote-bs4.js' %}"></script>
   <!-- Page Specific JS File -->
-  <script src="assets/js/page/widget-data.js"></script>
+  <script src="{% static 'assets/js/page/widget-data.js' %}"></script>
   <!-- Template JS File -->
-  <script src="assets/js/scripts.js"></script>
+  <script src="{% static 'assets/js/scripts.js' %}"></script>
   <!-- Custom JS File -->
-  <script src="assets/js/custom.js"></script>
+  <script src="{% static 'assets/js/custom.js' %}"></script>
 </body>
 
 

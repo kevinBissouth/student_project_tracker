@@ -10,7 +10,7 @@
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
   <title>Otika - Admin Dashboard Template</title>
   <!-- General CSS Files -->
-  {% comment %} <link rel="stylesheet" href="assets/css/app.min.css"> {% endcomment %}
+  {% comment %} <link rel="stylesheet" href="{% static 'assets/css/app.min.css' %}"> {% endcomment %}
   <link rel="stylesheet" href="{% static 'assets/bundles/jquery-selectric/selectric.css' %}">
   <!-- Template CSS -->
   <link rel="stylesheet" href="{% static 'assets/css/app.min.css' %}">
@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="{% static 'assets/css/components.css' %}">
   <!-- Custom style CSS -->
   <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
-  <link rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico' />
+  <link rel='shortcut icon' type='image/x-icon' href='{% static 'assets/img/favicon.ico' %}' />
 </head>
 
 <body>
@@ -80,7 +80,7 @@
                 </form>
               </div>
               <div class="mb-4 text-muted text-center">
-                Already Registered? <a href = {% url 'login' %} >Login</a>
+                Already Registered? <a href="{% url 'auth_login' %}">Login</a>
               </div>
             </div>
           </div>

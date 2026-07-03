@@ -1,29 +1,93 @@
-"""
-URL configuration for studentProjectTracker project.
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/6.0/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
 from django.contrib import admin
 from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('/admin/', admin.site.urls),
-    path('', views.dashboard, name="dashboard"),
-    path('login/', views.login, name="login"),
-    path('register/', views.register, name="register"),
-    path('forgot-password/', views.forgot_password, name="forgot_password"),
-    path('reset-password/', views.reset_password, name="reset_password"),
-    path('subscribe/', views.subscribe, name="subscribe")
+    path('admin/', admin.site.urls),
+    path('', views.index, name='dashboard_html'),
+    path('advance-table/', views.advance_table, name='advance_table'),
+    path('alert/', views.alert, name='alert'),
+    path('auth-forgot-password/', views.auth_forgot_password, name='auth_forgot_password'),
+    path('auth-login/', views.auth_login, name='auth_login'),
+    path('auth-register/', views.auth_register, name='auth_register'),
+    path('auth-reset-password/', views.auth_reset_password, name='auth_reset_password'),
+    path('avatar/', views.avatar, name='avatar'),
+    path('badge/', views.badge, name='badge'),
+    path('basic-form/', views.basic_form, name='basic_form'),
+    path('basic-table/', views.basic_table, name='basic_table'),
+    path('blank/', views.blank, name='blank'),
+    path('blog/', views.blog, name='blog'),
+    path('breadcrumb/', views.breadcrumb, name='breadcrumb'),
+    path('buttons/', views.buttons, name='buttons'),
+    path('calendar/', views.calendar, name='calendar'),
+    path('card/', views.card, name='card'),
+    path('carousel/', views.carousel, name='carousel'),
+    path('chart-amchart/', views.chart_amchart, name='chart_amchart'),
+    path('chart-apexchart/', views.chart_apexchart, name='chart_apexchart'),
+    path('chart-chartjs/', views.chart_chartjs, name='chart_chartjs'),
+    path('chart-echart/', views.chart_echart, name='chart_echart'),
+    path('chart-morris/', views.chart_morris, name='chart_morris'),
+    path('chart-sparkline/', views.chart_sparkline, name='chart_sparkline'),
+    path('chat/', views.chat, name='chat'),
+    path('checkbox-and-radio/', views.checkbox_and_radio, name='checkbox_and_radio'),
+    path('collapse/', views.collapse, name='collapse'),
+    path('contact/', views.contact, name='contact'),
+    path('create-post/', views.create_post, name='create_post'),
+    path('datatables/', views.datatables, name='datatables'),
+    path('dropdown/', views.dropdown, name='dropdown'),
+    path('editable-table/', views.editable_table, name='editable_table'),
+    path('email-compose/', views.email_compose, name='email_compose'),
+    path('email-inbox/', views.email_inbox, name='email_inbox'),
+    path('email-read/', views.email_read, name='email_read'),
+    path('empty-state/', views.empty_state, name='empty_state'),
+    path('errors-403/', views.errors_403, name='errors_403'),
+    path('errors-404/', views.errors_404, name='errors_404'),
+    path('errors-500/', views.errors_500, name='errors_500'),
+    path('errors-503/', views.errors_503, name='errors_503'),
+    path('export-table/', views.export_table, name='export_table'),
+    path('flags/', views.flags, name='flags'),
+    path('form-wizard/', views.form_wizard, name='form_wizard'),
+    path('forms-advanced-form/', views.forms_advanced_form, name='forms_advanced_form'),
+    path('forms-editor/', views.forms_editor, name='forms_editor'),
+    path('forms-validation/', views.forms_validation, name='forms_validation'),
+    path('gallery1/', views.gallery1, name='gallery1'),
+    path('gmaps-advanced-route/', views.gmaps_advanced_route, name='gmaps_advanced_route'),
+    path('gmaps-draggable-marker/', views.gmaps_draggable_marker, name='gmaps_draggable_marker'),
+    path('gmaps-geocoding/', views.gmaps_geocoding, name='gmaps_geocoding'),
+    path('gmaps-geolocation/', views.gmaps_geolocation, name='gmaps_geolocation'),
+    path('gmaps-marker/', views.gmaps_marker, name='gmaps_marker'),
+    path('gmaps-multiple-marker/', views.gmaps_multiple_marker, name='gmaps_multiple_marker'),
+    path('gmaps-route/', views.gmaps_route, name='gmaps_route'),
+    path('gmaps-simple/', views.gmaps_simple, name='gmaps_simple'),
+    path('icon-feather/', views.icon_feather, name='icon_feather'),
+    path('icon-font-awesome/', views.icon_font_awesome, name='icon_font_awesome'),
+    path('icon-ionicons/', views.icon_ionicons, name='icon_ionicons'),
+    path('icon-material/', views.icon_material, name='icon_material'),
+    path('icon-weather-icon/', views.icon_weather_icon, name='icon_weather_icon'),
+    path('invoice/', views.invoice, name='invoice'),
+    path('light-gallery/', views.light_gallery, name='light_gallery'),
+    path('list-group/', views.list_group, name='list_group'),
+    path('mail-inbox/', views.mail_inbox, name='mail_inbox'),
+    path('media-object/', views.media_object, name='media_object'),
+    path('modal/', views.modal, name='modal'),
+    path('multiple-upload/', views.multiple_upload, name='multiple_upload'),
+    path('navbar/', views.navbar, name='navbar'),
+    path('owl-carousel/', views.owl_carousel, name='owl_carousel'),
+    path('pagination/', views.pagination, name='pagination'),
+    path('popover/', views.popover, name='popover'),
+    path('portfolio/', views.portfolio, name='portfolio'),
+    path('posts/', views.posts, name='posts'),
+    path('pricing/', views.pricing, name='pricing'),
+    path('profile/', views.profile, name='profile'),
+    path('progress/', views.progress, name='progress'),
+    path('subscribe/', views.subscribe, name='subscribe'),
+    path('sweet-alert/', views.sweet_alert, name='sweet_alert'),
+    path('tabs/', views.tabs, name='tabs'),
+    path('timeline/', views.timeline, name='timeline'),
+    path('toastr/', views.toastr, name='toastr'),
+    path('tooltip/', views.tooltip, name='tooltip'),
+    path('typography/', views.typography, name='typography'),
+    path('vector-map/', views.vector_map, name='vector_map'),
+    path('widget-chart/', views.widget_chart, name='widget_chart'),
+    path('widget-data/', views.widget_data, name='widget_data'),
 ]
