@@ -260,12 +260,3 @@ def widget_chart(request):
 def widget_data(request):
     return render(request, 'widget-data.html')
 
-# def page(request, page):
-#     if '..' in page or page.startswith('/'):
-#         raise Http404()
-
-#     template_name = f'{page}.html'
-#     try:
-#         return render(request, template_name)
-#     except TemplateDoesNotExist:
-#         raise Http404()
