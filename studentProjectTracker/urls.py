@@ -1,9 +1,11 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('core.urls')),
+    path('accounts/', include('accounts.urls')),
     path('', views.index, name='dashboard_html'),
     path('advance-table/', views.advance_table, name='advance_table'),
     path('alert/', views.alert, name='alert'),

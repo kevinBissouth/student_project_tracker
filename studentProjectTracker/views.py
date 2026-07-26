@@ -1,4 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from django.conf import settings
+from django.core.mail import send_mail
 from django.http import Http404
 from django.template import TemplateDoesNotExist
 
@@ -81,6 +84,32 @@ def collapse(request):
     return render(request, 'collapse.html')
 
 def contact(request):
+    if request.method == 'POST':
+        name = request.POST.get('name', '')
+        email = request.POST.get('email', '')
+        subject = request.POST.get('subject', '')
+        message = request.POST.get('message', '')
+
+        if name and email and subject and message:
+            full_message = (
+                f"Message de : {name}\n"
+                f"Email : {email}\n"
+                f"Sujet : {subject}\n\n"
+                f"{message}"
+            )
+            send_mail(
+                subject=f"[Contact SPT] {subject}",
+                message=full_message,
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                recipient_list=[settings.CONTACT_EMAIL],
+                fail_silently=False,
+            )
+            messages.success(request, "Votre message a été envoyé avec succès. Nous vous répondrons dans les plus brefs délais.")
+        else:
+            messages.error(request, "Tous les champs sont obligatoires.")
+
+        return redirect('contact')
+
     return render(request, 'contact.html')
 
 def create_post(request):

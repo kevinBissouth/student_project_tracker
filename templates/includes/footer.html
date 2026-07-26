@@ -1,0 +1,85 @@
+{% load static %}
+<footer class="bg-dark text-white pt-5 pb-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 mb-4 mb-lg-0">
+        <div class="d-flex align-items-center mb-3">
+          <img src="{% static 'assets/img/logo.png' %}" alt="Student Project Tracker" height="35" class="mr-2">
+          <span class="font-weight-bold" style="font-size: 1.25rem;">Student Project Tracker</span>
+        </div>
+        <p class="text-muted mb-3" style="color: rgba(255,255,255,0.5) !important;">
+          La plateforme qui simplifie la gestion des projets académiques.
+          Créez, gérez et collaborez efficacement.
+        </p>
+        <div>
+          <a href="#" class="social-icon mr-2" title="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="social-icon mr-2" title="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="social-icon mr-2" title="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="#" class="social-icon" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-6 col-lg-2 mb-4 mb-lg-0 offset-lg-1">
+        <h6 class="font-weight-bold mb-3">Support</h6>
+        <ul class="list-unstyled mb-0">
+          <li class="mb-2"><a href="{% url 'home' %}#faq" class="footer-link">Centre d'aide</a></li>
+          <li class="mb-2"><a href="{% url 'guide' %}" class="footer-link">Guide d'utilisation</a></li>
+          <li class="mb-2"><a href="{% url 'home' %}#faq" class="footer-link">FAQ</a></li>
+          <li><a href="{% url 'contact' %}" class="footer-link">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-lg-2 mb-4 mb-lg-0">
+        <h6 class="font-weight-bold mb-3">Ressources</h6>
+        <ul class="list-unstyled mb-0">
+          <li class="mb-2"><a href="{% url 'docs' %}" class="footer-link">Documentation</a></li>
+          <li class="mb-2"><a href="{% url 'home' %}#features" class="footer-link">Fonctionnalités</a></li>
+          <li><a href="#" class="footer-link">À propos</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3">
+        <h6 class="font-weight-bold mb-3">Légal</h6>
+        <ul class="list-unstyled mb-0">
+          <li class="mb-2"><a href="{% url 'privacy' %}" class="footer-link">Politique de confidentialité</a></li>
+          <li class="mb-3"><a href="{% url 'terms' %}" class="footer-link">Conditions d'utilisation</a></li>
+        </ul>
+        <ul class="list-unstyled mb-0 pt-2 border-top border-secondary" style="border-color: rgba(255,255,255,0.1) !important;">
+          <li class="mb-2 d-flex align-items-center">
+            <i class="fas fa-envelope mr-2" style="color: rgba(255,255,255,0.5); width: 16px;"></i>
+            <a href="mailto:student_tracker@gmail.com" class="footer-link">student_tracker@gmail.com</a>
+          </li>
+          <li class="mb-2 d-flex align-items-center">
+            <i class="fas fa-phone mr-2" style="color: rgba(255,255,255,0.5); width: 16px;"></i>
+            <a href="tel:+237657713726" class="footer-link">+237 657 713 726</a>
+          </li>
+          <li class="d-flex align-items-start">
+            <i class="fas fa-map-marker-alt mr-2 mt-1" style="color: rgba(255,255,255,0.5); width: 16px;"></i>
+            <span class="footer-link">Ebolowa, Cameroun</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="border-secondary mt-4 mb-0" style="border-color: rgba(255,255,255,0.1) !important;">
+
+    <div class="row py-3">
+      <div class="col-12 text-center">
+        <p class="mb-0 text-muted" style="color: rgba(255,255,255,0.4) !important; font-size: 0.875rem;">
+          &copy; {% now "Y" %} <strong class="text-white-50">Student Project Tracker</strong>.
+          Tous droits réservés. | 
+          <a href="#" class="footer-link" style="font-size: 0.875rem;">Mentions légales</a> &middot;
+          <a href="#" class="footer-link" style="font-size: 0.875rem;">Politique de confidentialité</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>

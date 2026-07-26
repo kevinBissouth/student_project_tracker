@@ -1,0 +1,707 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Documentation — Student Project Tracker{% endblock %}
+
+{% block extra_css %}
+<style>
+  .docs-hero {
+    padding: 80px 0 60px;
+    background: linear-gradient(135deg, #6777ef 0%, #303f9f 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .docs-hero::before {
+    content: '';
+    position: absolute;
+    top: -40%;
+    right: -15%;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.03);
+  }
+  .docs-sidebar {
+    position: sticky;
+    top: 90px;
+    max-height: calc(100vh - 110px);
+    overflow-y: auto;
+  }
+  .docs-sidebar::-webkit-scrollbar { width: 4px; }
+  .docs-sidebar::-webkit-scrollbar-thumb { background: #e9ecef; border-radius: 4px; }
+  .docs-nav-link {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    color: #495057;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.15s;
+    border-left: 3px solid transparent;
+  }
+  .docs-nav-link:hover {
+    background: #f1f3f5;
+    color: #6777ef;
+    text-decoration: none;
+    border-left-color: #6777ef;
+  }
+  .docs-nav-link.active {
+    color: #6777ef;
+    background: #f0f1ff;
+    font-weight: 600;
+    border-left-color: #6777ef;
+  }
+  .docs-nav-link.sub {
+    padding-left: 1.5rem;
+    font-size: 0.825rem;
+    color: #868e96;
+  }
+  .docs-section {
+    scroll-margin-top: 100px;
+  }
+  .docs-section + .docs-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e9ecef;
+  }
+  .docs-icon {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    flex-shrink: 0;
+  }
+  .info-block {
+    border-left: 4px solid #6777ef;
+    background: #f8f9ff;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+  }
+  .info-block.warning {
+    border-left-color: #ffa426;
+    background: #fffcf0;
+  }
+  .info-block.success {
+    border-left-color: #22c03e;
+    background: #f0fff4;
+  }
+  .table-docs th {
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #495057;
+  }
+  .table-docs td, .table-docs th {
+    padding: 0.75rem 1rem;
+    vertical-align: middle;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<!-- ============================================================ -->
+<!-- Hero                                                          -->
+<!-- ============================================================ -->
+<div class="docs-hero text-white">
+  <div class="container position-relative">
+    <div class="row align-items-center">
+      <div class="col-lg-8">
+        <span class="badge badge-light badge-pill px-3 py-2 mb-3 font-weight-bold" style="color: #161c2d;">
+          <i class="fas fa-book mr-1"></i>Documentation
+        </span>
+        <h1 class="font-weight-bold" style="font-size: 2.75rem; letter-spacing: -1px;">Documentation technique</h1>
+        <p class="mb-0" style="font-size: 1.15rem; opacity: 0.75; max-width: 600px;">
+          Tout ce que vous devez savoir pour utiliser et comprendre la plateforme Student Project Tracker.
+        </p>
+      </div>
+      <div class="col-lg-4 text-center d-none d-lg-block">
+        <div style="font-size: 5rem; opacity: 0.1;">
+          <i class="fas fa-book-open"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- Contenu principal                                             -->
+<!-- ============================================================ -->
+<section class="section bg-whitesmoke py-0">
+  <div class="container">
+    <div class="row">
+      <!-- Sidebar -->
+      <div class="col-lg-3 d-none d-lg-block">
+        <div class="docs-sidebar py-4 pr-2">
+          <div class="card border-0 shadow-sm">
+            <div class="card-body p-3">
+              <strong class="d-block mb-2" style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #adb5bd;">Sommaire</strong>
+              <nav>
+                <a href="#docs-presentation" class="docs-nav-link"><i class="fas fa-home mr-2" style="font-size: 0.75rem;"></i>Présentation</a>
+                <a href="#docs-architecture" class="docs-nav-link"><i class="fas fa-sitemap mr-2" style="font-size: 0.75rem;"></i>Architecture</a>
+                <a href="#docs-features" class="docs-nav-link"><i class="fas fa-star mr-2" style="font-size: 0.75rem;"></i>Fonctionnalités</a>
+                <a href="#docs-projets" class="docs-nav-link sub"><i class="fas fa-briefcase mr-2" style="font-size: 0.7rem;"></i>Gestion des projets</a>
+                <a href="#docs-taches" class="docs-nav-link sub"><i class="fas fa-tasks mr-2" style="font-size: 0.7rem;"></i>Gestion des tâches</a>
+                <a href="#docs-profils" class="docs-nav-link"><i class="fas fa-users mr-2" style="font-size: 0.75rem;"></i>Profils utilisateurs</a>
+                <a href="#docs-notifications" class="docs-nav-link"><i class="fas fa-bell mr-2" style="font-size: 0.75rem;"></i>Notifications</a>
+                <a href="#docs-faq" class="docs-nav-link"><i class="fas fa-question-circle mr-2" style="font-size: 0.75rem;"></i>Questions fréquentes</a>
+                <a href="#docs-bonnes-pratiques" class="docs-nav-link"><i class="fas fa-check-double mr-2" style="font-size: 0.75rem;"></i>Bonnes pratiques</a>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contenu -->
+      <div class="col-lg-9 py-4">
+
+        <!-- Présentation -->
+        <div class="docs-section" id="docs-presentation">
+          <h2 class="font-weight-bold mb-3" style="font-size: 1.75rem;">
+            <i class="fas fa-home text-primary mr-2"></i>Présentation
+          </h2>
+          <p class="text-muted" style="line-height: 1.8;">
+            Student Project Tracker est une plateforme web conçue pour faciliter la gestion et le suivi
+            des projets académiques. Elle met en relation les étudiants et les encadreurs dans un espace
+            collaboratif structuré, permettant un suivi efficace et transparent de chaque projet.
+          </p>
+          <div class="row mt-4">
+            <div class="col-md-4 mb-3">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body text-center p-3">
+                  <div class="docs-icon bg-primary text-white mx-auto mb-2">
+                    <i class="fas fa-graduation-cap" style="font-size: 1.2rem;"></i>
+                  </div>
+                  <strong>Pour les étudiants</strong>
+                  <small class="d-block text-muted">Créez et gérez vos projets simplement.</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body text-center p-3">
+                  <div class="docs-icon bg-success text-white mx-auto mb-2">
+                    <i class="fas fa-chalkboard-teacher" style="font-size: 1.2rem;"></i>
+                  </div>
+                  <strong>Pour les encadreurs</strong>
+                  <small class="d-block text-muted">Supervisez et guidez vos étudiants.</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body text-center p-3">
+                  <div class="docs-icon bg-info text-white mx-auto mb-2">
+                    <i class="fas fa-cogs" style="font-size: 1.2rem;"></i>
+                  </div>
+                  <strong>Pour les administrateurs</strong>
+                  <small class="d-block text-muted">Gérez la plateforme et ses utilisateurs.</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Architecture -->
+        <div class="docs-section" id="docs-architecture">
+          <h2 class="font-weight-bold mb-3" style="font-size: 1.75rem;">
+            <i class="fas fa-sitemap text-primary mr-2"></i>Architecture générale
+          </h2>
+          <p class="text-muted" style="line-height: 1.8;">
+            La plateforme repose sur une architecture web classique avec une séparation claire
+            entre le frontend et le backend.
+          </p>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body p-3">
+                  <div class="d-flex align-items-center mb-2">
+                    <span class="docs-icon bg-primary text-white mr-2" style="width: 36px; height: 36px; border-radius: 8px;">
+                      <i class="fab fa-python" style="font-size: 1rem;"></i>
+                    </span>
+                    <strong>Backend</strong>
+                  </div>
+                  <small class="text-muted">Django 6.0 · PostgreSQL · ORM · API RESTful</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body p-3">
+                  <div class="d-flex align-items-center mb-2">
+                    <span class="docs-icon bg-success text-white mr-2" style="width: 36px; height: 36px; border-radius: 8px;">
+                      <i class="fab fa-html5" style="font-size: 1rem;"></i>
+                    </span>
+                    <strong>Frontend</strong>
+                  </div>
+                  <small class="text-muted">Django Templates · Bootstrap 5 · CSS3 · JavaScript</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <table class="table table-bordered bg-white table-docs mt-2">
+            <thead class="bg-light">
+              <tr>
+                <th>Couche</th>
+                <th>Technologie</th>
+                <th>Rôle</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="badge badge-primary">Présentation</span></td>
+                <td>Templates Django + Bootstrap</td>
+                <td><small class="text-muted">Affichage et interface utilisateur</small></td>
+              </tr>
+              <tr>
+                <td><span class="badge badge-success">Contrôleur</span></td>
+                <td>Vues Django</td>
+                <td><small class="text-muted">Traitement des requêtes et logique métier</small></td>
+              </tr>
+              <tr>
+                <td><span class="badge badge-warning">Données</span></td>
+                <td>PostgreSQL + Django ORM</td>
+                <td><small class="text-muted">Stockage et gestion des données</small></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Fonctionnalités -->
+        <div class="docs-section" id="docs-features">
+          <h2 class="font-weight-bold mb-3" style="font-size: 1.75rem;">
+            <i class="fas fa-star text-primary mr-2"></i>Fonctionnalités
+          </h2>
+          <p class="text-muted" style="line-height: 1.8;">
+            La plateforme offre un ensemble complet de fonctionnalités pour couvrir l'intégralité
+            du cycle de vie d'un projet académique.
+          </p>
+          <div class="row mt-3">
+            <div class="col-md-6 mb-3">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body p-3 d-flex align-items-start">
+                  <span class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mr-3" style="width: 36px; height: 36px; min-width: 36px;">
+                    <i class="fas fa-briefcase" style="font-size: 0.85rem;"></i>
+                  </span>
+                  <div>
+                    <strong>Projets</strong>
+                    <small class="d-block text-muted">CRUD complet, catégorisation, filtres, recherche.</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body p-3 d-flex align-items-start">
+                  <span class="rounded-circle bg-warning text-white d-flex align-items-center justify-content-center mr-3" style="width: 36px; height: 36px; min-width: 36px;">
+                    <i class="fas fa-tasks" style="font-size: 0.85rem;"></i>
+                  </span>
+                  <div>
+                    <strong>Tâches</strong>
+                    <small class="d-block text-muted">Priorités, échéances, statuts, commentaires.</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body p-3 d-flex align-items-start">
+                  <span class="rounded-circle bg-success text-white d-flex align-items-center justify-content-center mr-3" style="width: 36px; height: 36px; min-width: 36px;">
+                    <i class="fas fa-comments" style="font-size: 0.85rem;"></i>
+                  </span>
+                  <div>
+                    <strong>Commentaires</strong>
+                    <small class="d-block text-muted">Sur les projets et les tâches, avec notifications.</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body p-3 d-flex align-items-start">
+                  <span class="rounded-circle bg-info text-white d-flex align-items-center justify-content-center mr-3" style="width: 36px; height: 36px; min-width: 36px;">
+                    <i class="fas fa-users" style="font-size: 0.85rem;"></i>
+                  </span>
+                  <div>
+                    <strong>Profils</strong>
+                    <small class="d-block text-muted">Rôles étudiants, encadreurs, administrateurs.</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body p-3 d-flex align-items-start">
+                  <span class="rounded-circle bg-secondary text-white d-flex align-items-center justify-content-center mr-3" style="width: 36px; height: 36px; min-width: 36px;">
+                    <i class="fas fa-bell" style="font-size: 0.85rem;"></i>
+                  </span>
+                  <div>
+                    <strong>Notifications</strong>
+                    <small class="d-block text-muted">Alertes en temps réel sur les activités.</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body p-3 d-flex align-items-start">
+                  <span class="rounded-circle bg-danger text-white d-flex align-items-center justify-content-center mr-3" style="width: 36px; height: 36px; min-width: 36px;">
+                    <i class="fas fa-chart-bar" style="font-size: 0.85rem;"></i>
+                  </span>
+                  <div>
+                    <strong>Statistiques</strong>
+                    <small class="d-block text-muted">Tableaux de bord et indicateurs de progression.</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gestion des projets -->
+        <div class="docs-section" id="docs-projets">
+          <h3 class="font-weight-bold mb-3" style="font-size: 1.4rem;">
+            <i class="fas fa-briefcase text-primary mr-2"></i>Gestion des projets
+          </h3>
+          <p class="text-muted" style="line-height: 1.8;">
+            Les projets constituent le cœur de la plateforme. Chaque projet est créé par un étudiant
+            et peut être supervisé par un encadreur.
+          </p>
+          <div class="info-block mb-3">
+            <strong>Création d'un projet</strong>
+            <small class="d-block text-muted mt-1">Un étudiant peut créer autant de projets qu'il le souhaite.
+            Chaque projet doit avoir un titre, une description et une catégorie. L'assignation d'un encadreur
+            est optionnelle lors de la création.</small>
+          </div>
+          <div class="info-block success mb-3">
+            <strong>Cycle de vie</strong>
+            <small class="d-block text-muted mt-1">Brouillon → En cours → En révision → Terminé → Archivé.
+            Le statut évolue au fur et à mesure de l'avancement du projet.</small>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-bordered bg-white table-docs">
+              <thead class="bg-light">
+                <tr>
+                  <th>Statut</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><span class="badge badge-secondary">Brouillon</span></td><td><small class="text-muted">Projet en cours de préparation</small></td></tr>
+                <tr><td><span class="badge badge-primary">En cours</span></td><td><small class="text-muted">Projet actif avec des tâches en progression</small></td></tr>
+                <tr><td><span class="badge badge-warning">En révision</span></td><td><small class="text-muted">En attente de validation par l'encadreur</small></td></tr>
+                <tr><td><span class="badge badge-success">Terminé</span></td><td><small class="text-muted">Projet finalisé et validé</small></td></tr>
+                <tr><td><span class="badge badge-dark">Archivé</span></td><td><small class="text-muted">Projet clos et archivé</small></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Gestion des tâches -->
+        <div class="docs-section" id="docs-taches">
+          <h3 class="font-weight-bold mb-3" style="font-size: 1.4rem;">
+            <i class="fas fa-tasks text-primary mr-2"></i>Gestion des tâches
+          </h3>
+          <p class="text-muted" style="line-height: 1.8;">
+            Les tâches permettent de décomposer un projet en unités de travail gérables.
+            Chaque tâche est associée à un projet et possède ses propres attributs.
+          </p>
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <div class="card border-0 shadow-sm text-center h-100">
+                <div class="card-body p-3">
+                  <div class="rounded-circle bg-danger text-white d-flex align-items-center justify-content-center mx-auto mb-2" style="width: 36px; height: 36px;">
+                    <i class="fas fa-flag" style="font-size: 0.85rem;"></i>
+                  </div>
+                  <strong>Priorité</strong>
+                  <small class="d-block text-muted">Haute · Moyenne · Basse</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="card border-0 shadow-sm text-center h-100">
+                <div class="card-body p-3">
+                  <div class="rounded-circle bg-warning text-white d-flex align-items-center justify-content-center mx-auto mb-2" style="width: 36px; height: 36px;">
+                    <i class="fas fa-calendar" style="font-size: 0.85rem;"></i>
+                  </div>
+                  <strong>Échéance</strong>
+                  <small class="d-block text-muted">Date limite optionnelle</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="card border-0 shadow-sm text-center h-100">
+                <div class="card-body p-3">
+                  <div class="rounded-circle bg-success text-white d-flex align-items-center justify-content-center mx-auto mb-2" style="width: 36px; height: 36px;">
+                    <i class="fas fa-check-circle" style="font-size: 0.85rem;"></i>
+                  </div>
+                  <strong>Statut</strong>
+                  <small class="d-block text-muted">À faire · En cours · Terminé</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Profils utilisateurs -->
+        <div class="docs-section" id="docs-profils">
+          <h2 class="font-weight-bold mb-3" style="font-size: 1.75rem;">
+            <i class="fas fa-users text-primary mr-2"></i>Profils utilisateurs
+          </h2>
+          <p class="text-muted" style="line-height: 1.8;">
+            La plateforme distingue trois profils, chacun avec des permissions et des fonctionnalités spécifiques.
+          </p>
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body text-center p-4">
+                  <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-2" style="width: 48px; height: 48px;">
+                    <i class="fas fa-user-graduate"></i>
+                  </div>
+                  <h5 class="font-weight-bold">Étudiant</h5>
+                  <ul class="list-unstyled text-muted text-left mt-2" style="font-size: 0.85rem; line-height: 2;">
+                    <li><i class="fas fa-check text-success mr-1"></i> Créer des projets</li>
+                    <li><i class="fas fa-check text-success mr-1"></i> Gérer les tâches</li>
+                    <li><i class="fas fa-check text-success mr-1"></i> Collaborer</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body text-center p-4">
+                  <div class="rounded-circle bg-success text-white d-flex align-items-center justify-content-center mx-auto mb-2" style="width: 48px; height: 48px;">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                  </div>
+                  <h5 class="font-weight-bold">Encadreur</h5>
+                  <ul class="list-unstyled text-muted text-left mt-2" style="font-size: 0.85rem; line-height: 2;">
+                    <li><i class="fas fa-check text-success mr-1"></i> Superviser des projets</li>
+                    <li><i class="fas fa-check text-success mr-1"></i> Donner des retours</li>
+                    <li><i class="fas fa-check text-success mr-1"></i> Valider les étapes</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body text-center p-4">
+                  <div class="rounded-circle bg-warning text-white d-flex align-items-center justify-content-center mx-auto mb-2" style="width: 48px; height: 48px;">
+                    <i class="fas fa-user-cog"></i>
+                  </div>
+                  <h5 class="font-weight-bold">Administrateur</h5>
+                  <ul class="list-unstyled text-muted text-left mt-2" style="font-size: 0.85rem; line-height: 2;">
+                    <li><i class="fas fa-check text-success mr-1"></i> Gérer la plateforme</li>
+                    <li><i class="fas fa-check text-success mr-1"></i> Modérer les contenus</li>
+                    <li><i class="fas fa-check text-success mr-1"></i> Configurer le système</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Notifications -->
+        <div class="docs-section" id="docs-notifications">
+          <h2 class="font-weight-bold mb-3" style="font-size: 1.75rem;">
+            <i class="fas fa-bell text-primary mr-2"></i>Notifications
+          </h2>
+          <p class="text-muted" style="line-height: 1.8;">
+            Le système de notifications tient chacun informé des activités importantes sur la plateforme.
+          </p>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body p-3 d-flex align-items-start">
+                  <span class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mr-3" style="width: 36px; height: 36px; min-width: 36px;">
+                    <i class="fas fa-plus-circle" style="font-size: 0.85rem;"></i>
+                  </span>
+                  <div>
+                    <strong>Nouveau commentaire</strong>
+                    <small class="d-block text-muted">Notification lorsqu'un encadreur ou un étudiant commente.</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body p-3 d-flex align-items-start">
+                  <span class="rounded-circle bg-warning text-white d-flex align-items-center justify-content-center mr-3" style="width: 36px; height: 36px; min-width: 36px;">
+                    <i class="fas fa-clock" style="font-size: 0.85rem;"></i>
+                  </span>
+                  <div>
+                    <strong>Échéance approchante</strong>
+                    <small class="d-block text-muted">Rappel lorsqu'une tâche approche de sa date limite.</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body p-3 d-flex align-items-start">
+                  <span class="rounded-circle bg-success text-white d-flex align-items-center justify-content-center mr-3" style="width: 36px; height: 36px; min-width: 36px;">
+                    <i class="fas fa-check" style="font-size: 0.85rem;"></i>
+                  </span>
+                  <div>
+                    <strong>Changement de statut</strong>
+                    <small class="d-block text-muted">Notification lors du passage d'une tâche ou projet à un nouveau statut.</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body p-3 d-flex align-items-start">
+                  <span class="rounded-circle bg-danger text-white d-flex align-items-center justify-content-center mr-3" style="width: 36px; height: 36px; min-width: 36px;">
+                    <i class="fas fa-user-plus" style="font-size: 0.85rem;"></i>
+                  </span>
+                  <div>
+                    <strong>Assignation</strong>
+                    <small class="d-block text-muted">Notifié lorsqu'un encadreur est assigné à un projet.</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ -->
+        <div class="docs-section" id="docs-faq">
+          <h2 class="font-weight-bold mb-3" style="font-size: 1.75rem;">
+            <i class="fas fa-question-circle text-primary mr-2"></i>Questions fréquentes
+          </h2>
+          <div class="card border-0 shadow-sm">
+            <div class="card-body p-4">
+              <div id="docsAccordion">
+                <div class="accordion">
+                  <div class="accordion-header" role="button" data-toggle="collapse" data-target="#doc-faq-1">
+                    <h4>Quels sont les prérequis techniques ?</h4>
+                  </div>
+                  <div class="accordion-body collapse show" id="doc-faq-1" data-parent="#docsAccordion">
+                    <p class="mb-0 text-muted">Un navigateur web moderne (Chrome, Firefox, Safari, Edge) et une connexion internet. Aucune installation logicielle n'est requise.</p>
+                  </div>
+                </div>
+                <div class="accordion">
+                  <div class="accordion-header" role="button" data-toggle="collapse" data-target="#doc-faq-2">
+                    <h4>Puis-je exporter mes projets ?</h4>
+                  </div>
+                  <div class="accordion-body collapse" id="doc-faq-2" data-parent="#docsAccordion">
+                    <p class="mb-0 text-muted">Oui, les projets et leurs données peuvent être exportés. Les formats disponibles incluent PDF et CSV.</p>
+                  </div>
+                </div>
+                <div class="accordion">
+                  <div class="accordion-header" role="button" data-toggle="collapse" data-target="#doc-faq-3">
+                    <h4>Les données sont-elles sauvegardées ?</h4>
+                  </div>
+                  <div class="accordion-body collapse" id="doc-faq-3" data-parent="#docsAccordion">
+                    <p class="mb-0 text-muted">Oui, des sauvegardes régulières sont effectuées pour garantir l'intégrité de vos données. Cependant, nous recommandons de conserver une copie locale de vos travaux importants.</p>
+                  </div>
+                </div>
+                <div class="accordion">
+                  <div class="accordion-header" role="button" data-toggle="collapse" data-target="#doc-faq-4">
+                    <h4>Comment changer mon rôle ?</h4>
+                  </div>
+                  <div class="accordion-body collapse" id="doc-faq-4" data-parent="#docsAccordion">
+                    <p class="mb-0 text-muted">Le changement de rôle n'est pas possible en libre-service. Contactez l'administration via le formulaire de contact pour effectuer cette modification.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bonnes pratiques -->
+        <div class="docs-section" id="docs-bonnes-pratiques">
+          <h2 class="font-weight-bold mb-3" style="font-size: 1.75rem;">
+            <i class="fas fa-check-double text-primary mr-2"></i>Bonnes pratiques
+          </h2>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body p-3">
+                  <div class="d-flex align-items-center mb-2">
+                    <span class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mr-2" style="width: 28px; height: 28px; min-width: 28px;">
+                      <i class="fas fa-pen" style="font-size: 0.7rem;"></i>
+                    </span>
+                    <strong style="font-size: 0.9rem;">Descriptions détaillées</strong>
+                  </div>
+                  <small class="text-muted">Rédigez des descriptions claires et complètes pour faciliter la compréhension de vos projets.</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body p-3">
+                  <div class="d-flex align-items-center mb-2">
+                    <span class="rounded-circle bg-success text-white d-flex align-items-center justify-content-center mr-2" style="width: 28px; height: 28px; min-width: 28px;">
+                      <i class="fas fa-sitemap" style="font-size: 0.7rem;"></i>
+                    </span>
+                    <strong style="font-size: 0.9rem;">Découpage en tâches</strong>
+                  </div>
+                  <small class="text-muted">Découpez vos projets en tâches petites et réalisables pour un suivi plus précis.</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body p-3">
+                  <div class="d-flex align-items-center mb-2">
+                    <span class="rounded-circle bg-warning text-white d-flex align-items-center justify-content-center mr-2" style="width: 28px; height: 28px; min-width: 28px;">
+                      <i class="fas fa-calendar-check" style="font-size: 0.7rem;"></i>
+                    </span>
+                    <strong style="font-size: 0.9rem;">Échéances réalistes</strong>
+                  </div>
+                  <small class="text-muted">Fixez des dates limites réalisables et mettez régulièrement à jour l'avancement.</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body p-3">
+                  <div class="d-flex align-items-center mb-2">
+                    <span class="rounded-circle bg-info text-white d-flex align-items-center justify-content-center mr-2" style="width: 28px; height: 28px; min-width: 28px;">
+                      <i class="fas fa-comments" style="font-size: 0.7rem;"></i>
+                    </span>
+                    <strong style="font-size: 0.9rem;">Communication régulière</strong>
+                  </div>
+                  <small class="text-muted">Échangez régulièrement avec votre encadreur via les commentaires pour un suivi optimal.</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body p-3">
+                  <div class="d-flex align-items-center mb-2">
+                    <span class="rounded-circle bg-danger text-white d-flex align-items-center justify-content-center mr-2" style="width: 28px; height: 28px; min-width: 28px;">
+                      <i class="fas fa-sync" style="font-size: 0.7rem;"></i>
+                    </span>
+                    <strong style="font-size: 0.9rem;">Mise à jour régulière</strong>
+                  </div>
+                  <small class="text-muted">Mettez à jour le statut de vos tâches et projets au fur et à mesure de votre progression.</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body p-3">
+                  <div class="d-flex align-items-center mb-2">
+                    <span class="rounded-circle bg-secondary text-white d-flex align-items-center justify-content-center mr-2" style="width: 28px; height: 28px; min-width: 28px;">
+                      <i class="fas fa-shield-alt" style="font-size: 0.7rem;"></i>
+                    </span>
+                    <strong style="font-size: 0.9rem;">Sécurité</strong>
+                  </div>
+                  <small class="text-muted">Ne partagez jamais vos identifiants et utilisez un mot de passe fort et unique.</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

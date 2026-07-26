@@ -1,0 +1,45 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 px-4"
+     style="background: #ffffff; box-shadow: 0 1px 3px rgba(0,0,0,0.04); width: 100%; left: 0; right: 0;">
+  <a class="navbar-brand d-flex align-items-center" href="{% url 'home' %}">
+    <img src="{% static 'assets/img/logo.png' %}" alt="Student Project Tracker" height="38">
+    <span class="font-weight-bold ml-2 d-none d-md-inline" style="color: #2c3e50; font-size: 1.1rem;">
+      Student Project Tracker
+    </span>
+  </a>
+
+  <button class="navbar-toggler border-0" type="button" data-toggle="collapse"
+    data-target="#navbarLanding" aria-controls="navbarLanding"
+    aria-expanded="false" aria-label="Menu">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarLanding">
+    <ul class="navbar-nav mx-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'home' %}" style="font-weight: 500; color: #2c3e50;">Accueil</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#features" style="font-weight: 500; color: #2c3e50;">Fonctionnalités</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#roles" style="font-weight: 500; color: #2c3e50;">Profils</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#faq" style="font-weight: 500; color: #2c3e50;">FAQ</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#contact" style="font-weight: 500; color: #2c3e50;">Contact</a>
+      </li>
+    </ul>
+
+    <div class="d-flex align-items-center">
+      <a class="btn btn-outline-primary rounded-pill mr-2 px-3 py-1" href="{% url 'login' %}">
+        <i class="fas fa-sign-in-alt mr-1"></i>Connexion
+      </a>
+      <a class="btn btn-primary rounded-pill px-3 py-1" href="{% url 'register' %}">
+        <i class="fas fa-user-plus mr-1"></i>Inscription
+      </a>
+    </div>
+  </div>
+</nav>

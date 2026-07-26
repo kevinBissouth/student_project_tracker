@@ -1,0 +1,570 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Politique de confidentialité — Student Project Tracker{% endblock %}
+
+{% block extra_css %}
+<style>
+  .legal-hero {
+    padding: 80px 0 60px;
+    background: linear-gradient(135deg, #6777ef 0%, #303f9f 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .legal-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+  .legal-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -10%;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.03);
+  }
+  .legal-section + .legal-section {
+    border-top: 1px solid #e9ecef;
+    padding-top: 2.5rem;
+    margin-top: 2.5rem;
+  }
+  .legal-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    flex-shrink: 0;
+  }
+  .timeline-card {
+    position: relative;
+    padding-left: 2rem;
+    border-left: 2px solid #6777ef;
+    margin-left: 1.5rem;
+    padding-bottom: 2rem;
+  }
+  .timeline-card:last-child {
+    padding-bottom: 0;
+  }
+  .timeline-card::before {
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: 6px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #6777ef;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 3px #6777ef;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<!-- ============================================================ -->
+<!-- Hero                                                          -->
+<!-- ============================================================ -->
+<div class="legal-hero text-white">
+  <div class="container position-relative">
+    <div class="row align-items-center">
+      <div class="col-lg-8">
+        <span class="badge badge-light badge-pill px-3 py-2 mb-3 font-weight-bold" style="color: #6777ef;">
+          <i class="fas fa-shield-alt mr-1"></i>Confidentialité
+        </span>
+        <h1 class="font-weight-bold" style="font-size: 2.75rem; letter-spacing: -1px;">Politique de confidentialité</h1>
+        <p class="mb-0" style="font-size: 1.15rem; opacity: 0.85; max-width: 600px;">
+          Dernière mise à jour : juillet 2026. Nous accordons une importance capitale à la protection de vos données personnelles.
+        </p>
+      </div>
+      <div class="col-lg-4 text-center d-none d-lg-block">
+        <div style="font-size: 6rem; opacity: 0.15;">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- Introduction                                                 -->
+<!-- ============================================================ -->
+<section class="section">
+  <div class="container py-4">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="card border-0 shadow-sm bg-whitesmoke">
+          <div class="card-body p-4 p-lg-5">
+            <div class="d-flex align-items-start">
+              <div class="legal-icon bg-primary text-white mr-4">
+                <i class="fas fa-info-circle" style="font-size: 1.25rem;"></i>
+              </div>
+              <div>
+                <h5 class="font-weight-bold">Notre engagement</h5>
+                <p class="text-muted mb-0" style="line-height: 1.8;">
+                  Student Project Tracker s'engage à protéger la vie privée de ses utilisateurs.
+                  Cette politique de confidentialité décrit comment nous collectons, utilisons et protégeons
+                  vos informations personnelles lorsque vous utilisez notre plateforme de gestion de projets académiques.
+                  En utilisant nos services, vous acceptez les pratiques décrites dans le présent document.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- Contenu principal                                             -->
+<!-- ============================================================ -->
+<section class="section bg-whitesmoke">
+  <div class="container py-4">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+
+        <!-- 1. Données collectées -->
+        <div class="legal-section">
+          <div class="d-flex align-items-start mb-4">
+            <div class="legal-icon bg-primary text-white mr-3">
+              <i class="fas fa-database" style="font-size: 1.1rem;"></i>
+            </div>
+            <div>
+              <h4 class="font-weight-bold mb-2">1. Données collectées</h4>
+              <p class="text-muted">
+                Nous collectons les données strictement nécessaires au fonctionnement de la plateforme :
+              </p>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body p-3 d-flex align-items-start">
+                      <span class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mr-3" style="width: 36px; height: 36px; min-width: 36px;">
+                        <i class="fas fa-user" style="font-size: 0.85rem;"></i>
+                      </span>
+                      <div>
+                        <strong>Données d'identification</strong>
+                        <small class="d-block text-muted">Nom, prénom, adresse email, rôle (étudiant/encadreur).</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body p-3 d-flex align-items-start">
+                      <span class="rounded-circle bg-success text-white d-flex align-items-center justify-content-center mr-3" style="width: 36px; height: 36px; min-width: 36px;">
+                        <i class="fas fa-graduation-cap" style="font-size: 0.85rem;"></i>
+                      </span>
+                      <div>
+                        <strong>Données académiques</strong>
+                        <small class="d-block text-muted">Filière, niveau d'étude, projets créés, tâches associées.</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body p-3 d-flex align-items-start">
+                      <span class="rounded-circle bg-warning text-white d-flex align-items-center justify-content-center mr-3" style="width: 36px; height: 36px; min-width: 36px;">
+                        <i class="fas fa-chart-line" style="font-size: 0.85rem;"></i>
+                      </span>
+                      <div>
+                        <strong>Données d'utilisation</strong>
+                        <small class="d-block text-muted">Connexions, actions sur la plateforme, préférences.</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body p-3 d-flex align-items-start">
+                      <span class="rounded-circle bg-info text-white d-flex align-items-center justify-content-center mr-3" style="width: 36px; height: 36px; min-width: 36px;">
+                        <i class="fas fa-cookie" style="font-size: 0.85rem;"></i>
+                      </span>
+                      <div>
+                        <strong>Cookies techniques</strong>
+                        <small class="d-block text-muted">Cookies de session et de préférences nécessaires au fonctionnement.</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Pourquoi collectons-nous ces données -->
+        <div class="legal-section">
+          <div class="d-flex align-items-start mb-4">
+            <div class="legal-icon bg-success text-white mr-3">
+              <i class="fas fa-question-circle" style="font-size: 1.1rem;"></i>
+            </div>
+            <div>
+              <h4 class="font-weight-bold mb-3">2. Finalités de la collecte</h4>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body p-3 d-flex align-items-start">
+                      <span class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mr-3" style="width: 36px; height: 36px; min-width: 36px;">
+                        <i class="fas fa-check" style="font-size: 0.85rem;"></i>
+                      </span>
+                      <small class="text-muted">Création et gestion de votre compte utilisateur.</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body p-3 d-flex align-items-start">
+                      <span class="rounded-circle bg-success text-white d-flex align-items-center justify-content-center mr-3" style="width: 36px; height: 36px; min-width: 36px;">
+                        <i class="fas fa-check" style="font-size: 0.85rem;"></i>
+                      </span>
+                      <small class="text-muted">Fourniture des fonctionnalités de gestion de projets et de tâches.</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body p-3 d-flex align-items-start">
+                      <span class="rounded-circle bg-warning text-white d-flex align-items-center justify-content-center mr-3" style="width: 36px; height: 36px; min-width: 36px;">
+                        <i class="fas fa-check" style="font-size: 0.85rem;"></i>
+                      </span>
+                      <small class="text-muted">Communication entre étudiants et encadreurs.</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body p-3 d-flex align-items-start">
+                      <span class="rounded-circle bg-info text-white d-flex align-items-center justify-content-center mr-3" style="width: 36px; height: 36px; min-width: 36px;">
+                        <i class="fas fa-check" style="font-size: 0.85rem;"></i>
+                      </span>
+                      <small class="text-muted">Amélioration continue de nos services et support technique.</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Utilisation des données -->
+        <div class="legal-section">
+          <div class="d-flex align-items-start mb-3">
+            <div class="legal-icon bg-warning text-white mr-3">
+              <i class="fas fa-cogs" style="font-size: 1.1rem;"></i>
+            </div>
+            <div>
+              <h4 class="font-weight-bold mb-2">3. Utilisation des données</h4>
+              <p class="text-muted">
+                Vos données sont utilisées exclusivement pour :
+              </p>
+              <ul class="text-muted" style="line-height: 2;">
+                <li>Vous permettre de créer et gérer vos projets académiques.</li>
+                <li>Faciliter la collaboration avec vos encadreurs.</li>
+                <li>Assurer le bon fonctionnement technique de la plateforme.</li>
+                <li>Vous contacter en cas de besoin (support, informations importantes).</li>
+                <li>Respecter nos obligations légales et réglementaires.</li>
+              </ul>
+              <div class="alert alert-primary mt-3 mb-0">
+                <div class="d-flex align-items-start">
+                  <i class="fas fa-info-circle mr-2 mt-1"></i>
+                  <small>Nous ne vendons jamais vos données personnelles à des tiers. Vos informations ne sont utilisées que dans le cadre du service fourni.</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Durée de conservation -->
+        <div class="legal-section">
+          <div class="d-flex align-items-start mb-3">
+            <div class="legal-icon bg-danger text-white mr-3">
+              <i class="fas fa-clock" style="font-size: 1.1rem;"></i>
+            </div>
+            <div>
+              <h4 class="font-weight-bold mb-2">4. Durée de conservation</h4>
+              <p class="text-muted">
+                Nous conservons vos données uniquement le temps nécessaire aux finalités pour lesquelles elles ont été collectées :
+              </p>
+              <div style="position: relative; padding: 1rem 0;">
+                <div class="timeline-card">
+                  <strong>Compte actif</strong>
+                  <small class="d-block text-muted">Tant que votre compte est actif, vos données sont conservées.</small>
+                </div>
+                <div class="timeline-card">
+                  <strong>Suppression du compte</strong>
+                  <small class="d-block text-muted">Vos données sont définitivement supprimées dans un délai de 30 jours après la demande de suppression.</small>
+                </div>
+                <div class="timeline-card">
+                  <strong>Données anonymisées</strong>
+                  <small class="d-block text-muted">Certaines statistiques anonymisées peuvent être conservées à des fins d'analyse.</small>
+                </div>
+                <div class="timeline-card">
+                  <strong>Obligations légales</strong>
+                  <small class="d-block text-muted">Certaines données peuvent être conservées conformément aux obligations légales (1 an minimum).</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Droits des utilisateurs -->
+        <div class="legal-section">
+          <div class="d-flex align-items-start mb-3">
+            <div class="legal-icon bg-info text-white mr-3">
+              <i class="fas fa-gavel" style="font-size: 1.1rem;"></i>
+            </div>
+            <div>
+              <h4 class="font-weight-bold mb-2">5. Vos droits</h4>
+              <p class="text-muted">Conformément à la réglementation applicable, vous disposez des droits suivants :</p>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body p-3 d-flex align-items-start">
+                      <span class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mr-3" style="width: 36px; height: 36px; min-width: 36px; font-size: 0.8rem; font-weight: 700;">1</span>
+                      <div>
+                        <strong>Droit d'accès</strong>
+                        <small class="d-block text-muted">Obtenir une copie de vos données personnelles.</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body p-3 d-flex align-items-start">
+                      <span class="rounded-circle bg-success text-white d-flex align-items-center justify-content-center mr-3" style="width: 36px; height: 36px; min-width: 36px; font-size: 0.8rem; font-weight: 700;">2</span>
+                      <div>
+                        <strong>Droit de rectification</strong>
+                        <small class="d-block text-muted">Modifier vos informations inexactes ou incomplètes.</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body p-3 d-flex align-items-start">
+                      <span class="rounded-circle bg-warning text-white d-flex align-items-center justify-content-center mr-3" style="width: 36px; height: 36px; min-width: 36px; font-size: 0.8rem; font-weight: 700;">3</span>
+                      <div>
+                        <strong>Droit à l'effacement</strong>
+                        <small class="d-block text-muted">Demander la suppression de vos données.</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body p-3 d-flex align-items-start">
+                      <span class="rounded-circle bg-info text-white d-flex align-items-center justify-content-center mr-3" style="width: 36px; height: 36px; min-width: 36px; font-size: 0.8rem; font-weight: 700;">4</span>
+                      <div>
+                        <strong>Droit d'opposition</strong>
+                        <small class="d-block text-muted">Vous opposer au traitement de vos données.</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body p-3 d-flex align-items-start">
+                      <span class="rounded-circle bg-secondary text-white d-flex align-items-center justify-content-center mr-3" style="width: 36px; height: 36px; min-width: 36px; font-size: 0.8rem; font-weight: 700;">5</span>
+                      <div>
+                        <strong>Droit à la portabilité</strong>
+                        <small class="d-block text-muted">Recevoir vos données dans un format structuré.</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body p-3 d-flex align-items-start">
+                      <span class="rounded-circle bg-danger text-white d-flex align-items-center justify-content-center mr-3" style="width: 36px; height: 36px; min-width: 36px; font-size: 0.8rem; font-weight: 700;">6</span>
+                      <div>
+                        <strong>Retrait du consentement</strong>
+                        <small class="d-block text-muted">Retirer votre consentement à tout moment.</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Sécurité des données -->
+        <div class="legal-section">
+          <div class="d-flex align-items-start mb-3">
+            <div class="legal-icon bg-secondary text-white mr-3">
+              <i class="fas fa-lock" style="font-size: 1.1rem;"></i>
+            </div>
+            <div>
+              <h4 class="font-weight-bold mb-2">6. Sécurité des données</h4>
+              <p class="text-muted">
+                Nous mettons en œuvre des mesures de sécurité techniques et organisationnelles pour protéger vos données :
+              </p>
+              <div class="row">
+                <div class="col-md-4 mb-3">
+                  <div class="card border-0 shadow-sm h-100 text-center">
+                    <div class="card-body p-3">
+                      <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-2" style="width: 44px; height: 44px;">
+                        <i class="fas fa-lock"></i>
+                      </div>
+                      <strong>Chiffrement SSL/TLS</strong>
+                      <small class="d-block text-muted">Toutes les données sont chiffrées en transit.</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <div class="card border-0 shadow-sm h-100 text-center">
+                    <div class="card-body p-3">
+                      <div class="rounded-circle bg-success text-white d-flex align-items-center justify-content-center mx-auto mb-2" style="width: 44px; height: 44px;">
+                        <i class="fas fa-server"></i>
+                      </div>
+                      <strong>Serveurs sécurisés</strong>
+                      <small class="d-block text-muted">Hébergement avec accès restreint et contrôlé.</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <div class="card border-0 shadow-sm h-100 text-center">
+                    <div class="card-body p-3">
+                      <div class="rounded-circle bg-warning text-white d-flex align-items-center justify-content-center mx-auto mb-2" style="width: 44px; height: 44px;">
+                        <i class="fas fa-user-shield"></i>
+                      </div>
+                      <strong>Contrôle d'accès</strong>
+                      <small class="d-block text-muted">Authentification et autorisations strictes.</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Cookies -->
+        <div class="legal-section">
+          <div class="d-flex align-items-start mb-3">
+            <div class="legal-icon bg-primary text-white mr-3">
+              <i class="fas fa-cookie-bite" style="font-size: 1.1rem;"></i>
+            </div>
+            <div>
+              <h4 class="font-weight-bold mb-2">7. Cookies</h4>
+              <p class="text-muted">
+                Notre plateforme utilise uniquement des cookies techniques nécessaires à son fonctionnement :
+              </p>
+              <div class="table-responsive">
+                <table class="table table-bordered bg-white">
+                  <thead class="bg-light">
+                    <tr>
+                      <th>Type</th>
+                      <th>Finalité</th>
+                      <th>Durée</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><span class="badge badge-primary">Session</span></td>
+                      <td>Maintien de votre session connectée</td>
+                      <td>Durée de la session</td>
+                    </tr>
+                    <tr>
+                      <td><span class="badge badge-warning">Préférences</span></td>
+                      <td>Mémorisation de vos préférences d'affichage</td>
+                      <td>1 an</td>
+                    </tr>
+                    <tr>
+                      <td><span class="badge badge-secondary">CSRF</span></td>
+                      <td>Protection contre les attaques CSRF</td>
+                      <td>Durée de la session</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="alert alert-info mb-0">
+                <div class="d-flex align-items-start">
+                  <i class="fas fa-info-circle mr-2 mt-1"></i>
+                  <small>Nous n'utilisons pas de cookies publicitaires ou de traçage tiers.</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. Contact -->
+        <div class="legal-section">
+          <div class="d-flex align-items-start mb-3">
+            <div class="legal-icon bg-success text-white mr-3">
+              <i class="fas fa-envelope" style="font-size: 1.1rem;"></i>
+            </div>
+            <div>
+              <h4 class="font-weight-bold mb-2">8. Nous contacter</h4>
+              <p class="text-muted">
+                Pour toute question relative à cette politique de confidentialité ou pour exercer vos droits, vous pouvez nous contacter :
+              </p>
+              <div class="card border-0 shadow-sm">
+                <div class="card-body p-4">
+                  <div class="row">
+                    <div class="col-md-6 mb-3 mb-md-0">
+                      <div class="d-flex align-items-center mb-3">
+                        <div class="contact-icon bg-primary text-white mr-3">
+                          <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                          <small class="text-muted d-block">Email</small>
+                          <a href="mailto:student_tracker@gmail.com" class="font-weight-bold">student_tracker@gmail.com</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="d-flex align-items-center">
+                        <div class="contact-icon bg-success text-white mr-3">
+                          <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                          <small class="text-muted d-block">Adresse</small>
+                          <span class="font-weight-bold">Ebolowa, Cameroun</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- CTA                                                           -->
+<!-- ============================================================ -->
+<section class="section">
+  <div class="container py-4">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <div class="card border-0 shadow-sm bg-primary text-white">
+          <div class="card-body p-5">
+            <h4 class="font-weight-bold mb-2">Des questions ?</h4>
+            <p class="mb-4" style="opacity: 0.85;">Notre équipe est là pour vous répondre.</p>
+            <a href="{% url 'contact' %}" class="btn btn-lg font-weight-bold rounded-pill" style="background: #fff; color: #6777ef; padding: 0.75rem 2rem; border: none;">
+              <i class="fas fa-paper-plane mr-2"></i>Nous contacter
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
